@@ -1,8 +1,12 @@
 # 요구사항 수집 (Elicitation)
 
 명세를 쓰기 전에, 먼저 "무엇을 요구사항으로 뽑아낼지"부터 의식적으로 수집해야 합니다.
-IIBA(국제비즈니스분석협회)의 BABOK(Business Analysis Body of Knowledge) 가이드가 정의한
-9가지 핵심 수집 기법 중, 개인 프로젝트에 실용적인 것들:
+IIBA(국제비즈니스분석협회)의 BABOK(Business Analysis Body of Knowledge) 가이드는 9가지
+핵심 수집 기법(Brainstorming, Document Analysis, Focus Group, Interface Analysis,
+Interview, Observation, Prototyping, Requirements Workshop, Survey/Questionnaire)을
+정의합니다. 이 중 개인 프로젝트에 실용적인 6개만 아래에 정리합니다 — Focus Group(다수
+이해관계자 그룹 인터뷰), Interface Analysis(기존 시스템 간 연동 지점 분석), Survey(대규모
+설문)는 협업자·사용자 규모가 큰 조직에서 주로 쓰여 개인 워크플로우에는 잘 안 맞아 뺐습니다.
 
 ## 핵심 기법
 

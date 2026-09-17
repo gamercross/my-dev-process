@@ -1,11 +1,16 @@
 # 비기능 요구사항 정량화 — Gilb's Planguage
 
-기존 FURPS+ 규칙("정성적 표현 금지, 측정 가능한 숫자로")은 원칙만 말해주고 "어떻게
-숫자로 만드는가"는 안 알려줍니다. Tom Gilb의 **Planguage**는 "정량화할 수 없으면 통제할
-수 없다(If you can't quantify it, you can't control it)"는 원칙 아래, 비기능 요구사항을
-정확히 숫자로 못박는 표준 필드를 제공합니다.
+**FURPS+**(1단계/2단계 다른 문서에서 계속 나오는 약어)는 비기능 요구사항을 Functionality
+/ Usability / Reliability / Performance / Supportability(+ 기타 제약) 5범주로 분류하는
+모델입니다. FURPS+ 규칙("정성적 표현 금지, 측정 가능한 숫자로")은 원칙만 말해주고
+"어떻게 숫자로 만드는가"는 안 알려줍니다. Tom Gilb의 **Planguage**는 "정량화할 수 없으면
+통제할 수 없다(If you can't quantify it, you can't control it)"는 원칙 아래, FURPS+로
+분류된 비기능 요구사항을 정확히 숫자로 못박는 표준 필드를 제공합니다.
 
 ## Planguage 핵심 필드
+
+Planguage 원전은 Budget, Record, Trend, Fail, Survival 등 더 많은 필드를 정의하지만,
+개인 프로젝트에는 과합니다. 이 저장소에서는 실용적으로 아래 6개만 씁니다.
 
 | 필드 | 의미 |
 |---|---|
@@ -15,6 +20,10 @@
 | Goal | 이번에 달성해야 하는 최소 기준 (이걸 못 채우면 요구사항 미충족) |
 | Stretch | 더 바람직한 수준 |
 | Wish | 이상적이지만 지금 당장은 무리인 수준 |
+
+> 프로젝트가 커져서 여러 사람이 같은 요구사항을 다른 기준으로 해석하는 문제가 생기면,
+> 그때 Budget(자원 한도)·Fail(이 아래로 떨어지면 실패)·Survival(생존 최소선) 필드를
+> 추가로 도입한다.
 
 ## 우리 프로젝트 NFR을 Planguage로 재작성
 

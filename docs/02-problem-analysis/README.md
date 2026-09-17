@@ -9,7 +9,8 @@
    모은다.
 2. **[명세 (EARS)](02-specification-ears.md)** — 기능 요구사항을 5가지 정해진 문형으로만
    쓴다. 모호함과 암묵적 예외 케이스를 제거한다.
-3. **[정량화 (Planguage)](03-quantification-planguage.md)** — 비기능 요구사항에
+3. **[정량화 (Planguage)](03-quantification-planguage.md)** — 비기능 요구사항(FURPS+:
+   Functionality/Usability/Reliability/Performance/Supportability로 분류)에
    Scale/Meter/Goal을 부여해 "빠르다/편하다" 같은 표현을 숫자로 바꾼다.
 4. **[우선순위 (MoSCoW × Kano)](04-prioritization.md)** — 무엇을 지금 할지(MoSCoW)와
    투자 대비 만족도가 어떻게 오르는지(Kano)를 함께 본다.
@@ -52,4 +53,5 @@ FR1 (패턴: Ubiquitous/Event-driven/State-driven/Unwanted/Optional):
 이 저장소 자체의 요구사항(FR1~FR3)을 이 파이프라인 전체로 실제 적용한 결과:
 → [applied-example.md](applied-example.md)
 
-> 상태: 초안 확정, 사용자 검토 대기 → 확정되면 [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md)로 진행
+> 상태: ✅ 완료 — 3단계(패턴 분석)로 이미 진행되어 [ADR-0001](../03-pattern-analysis/adr/0001-storage-and-interface.md)까지 확정됨.
+> 전체 진행상황은 [`docs/00-overview/README.md`](../00-overview/README.md) 참고.
