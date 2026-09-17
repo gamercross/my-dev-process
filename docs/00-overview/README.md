@@ -65,7 +65,7 @@ docs/
 | 1. 문제 저장 | ✅ 완료 (초안) | [`docs/01-problem-save/`](../01-problem-save/README.md) |
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
-| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
+| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | ⬜ 미착수 | [`docs/05-implementation/`](../05-implementation/README.md) |
 | 6. 서비스 | ⬜ 미착수 | [`docs/06-service/`](../06-service/README.md) |
 | 7. 유지보수 | ⬜ 미착수 | [`docs/07-maintenance/`](../07-maintenance/README.md) |
@@ -127,3 +127,5 @@ flowchart LR
   ADR-0001(파일+Claude Code 스킬 하이브리드 채택) 추가.
 - 2026-09-17: 4단계 스켈레톤 완료 — `.claude/skills/dev-workflow/SKILL.md`,
   `docs/01-problem-save/sessions/` 폴더 구조 확정.
+- 2026-09-17: 4단계에 Walking Skeleton(Cockburn)/Tracer Bullet(Hunt & Thomas)/Spike(XP)
+  개념과 "Make it work, make it right, make it fast" 원칙 추가.
