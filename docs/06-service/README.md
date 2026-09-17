@@ -8,4 +8,15 @@
 
 - **알고리즘 트랙**: 제출/채점, 성능(런타임/메모리) 확인
 - **프로젝트 트랙**: 배포, CI/CD, 모니터링
-- 완료 후 7단계로 전달
+- 완료 후 [7단계](../07-maintenance/README.md)로 전달
+
+## 놓치면 안 되는 연결: Planguage Goal 실측
+
+[2단계](../02-problem-analysis/03-quantification-planguage.md)에서 비기능 요구사항마다
+`Scale/Meter/Goal`을 정해놨습니다. **이 Goal을 실제로 달성했는지 측정하는 자리가
+바로 이 단계입니다** — 정량화만 해놓고 실측을 안 하면 2단계 작업이 무의미해집니다.
+
+- Usability Goal("5분 이내 작성"): 실제 사용해보며 타이머로 측정
+- Supportability Goal("새 트랙 추가 시 기존 파일 0개 수정"): 다음 트랙 추가 커밋에서
+  `git diff --stat`으로 확인
+- 측정 결과가 Goal 미달이면, 이 사실 자체가 7단계 회고의 입력이 됨
