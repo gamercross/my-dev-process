@@ -50,6 +50,35 @@ DoD 열은 앞 단계가 이미 만들어둔 체크리스트를 그대로 가리
 한 바퀴 돌았습니다. 근거: [`catalog/patterns.md`](../catalog/patterns.md)의
 "예시 문제/사례"에 두 문제가 모두 연결되어 있음.
 
+## 새 문제/프로젝트용 게이트 로그 템플릿
+
+위 표는 **이 워크플로우 시스템 자체(메타 프로젝트)**의 기록입니다. 앞으로 저장하는
+개별 문제/프로젝트(예: `sessions/algorithm-track/...`)는 자기 것을 따로 남겨야
+하는데, 지금까지는 그 자리가 없었습니다 — 전체 점검에서 발견한 빈틈입니다.
+
+**규칙: 1단계 세션 파일(`docs/01-problem-save/sessions/<트랙>/<날짜>-<슬러그>.md`)
+맨 아래에 아래 블록을 그대로 붙여서 채운다.**
+
+```
+## 게이트 로그
+
+| 게이트 | 결정 | 근거 |
+|---|---|---|
+| 1 → 2 | | |
+| 2 → 3 | | |
+| 3 → 4 | | |
+| 4 → 5 | | |
+| 5 → 6 | | |
+| 6 → 7 | | |
+```
+
+- 결정 칸은 항상 Go / Recycle / Hold / Kill 중 하나
+- [2단계 "적용 범위"](../02-problem-analysis/README.md)에 따라 단계 자체를 생략하는
+  경우(알고리즘 트랙 단순 문제가 2단계를 건너뛰는 경우 등)는 **Skip**으로 쓰고 근거에
+  왜 생략했는지 남긴다 — Cooper의 4개 결정에는 없는 예외지만, 이 저장소의 2단계 경량화
+  규칙과 맞물려서 필요함
+- 아직 안 온 게이트는 행 자체를 비워두거나 지운다 (거짓으로 채우지 않는다)
+
 ## 게이트 통과 기록 (이 프로젝트 자체)
 
 | 게이트 | 결정 | 근거 |
@@ -60,6 +89,15 @@ DoD 열은 앞 단계가 이미 만들어둔 체크리스트를 그대로 가리
 | 3 → 4 | Go | [ADR-0001](../03-pattern-analysis/adr/0001-storage-and-interface.md) Accepted |
 | 4 → 5 | Go | 트랙 자동 인식 스모크 테스트 통과 ([04단계 README](../04-pattern-implementation/README.md)) |
 | 5 → 6 | (대기) | 5단계 미착수 |
+
+## 실제 사용 예시 — Two Sum / Contains Duplicate
+
+위 템플릿을 실제로 두 세션 파일에 채워서 검증함:
+[Two Sum](../01-problem-save/sessions/algorithm-track/2026-09-17-two-sum.md),
+[Contains Duplicate](../01-problem-save/sessions/algorithm-track/2026-09-17-contains-duplicate.md).
+두 항목 모두 2단계는 Skip(경량 스코프), 3→4는 Go(카탈로그에서 기존 패턴을 찾아 재사용
+— [핵심 피드백 루프 실증](#핵심-피드백-루프-실증-2026-09-17) 참고), 4단계 이후는 아직
+비어 있음(실제 최적화 코드 구현 전) — 거짓으로 채우지 않고 정직하게 비워둔 예시.
 
 ## 출처
 - [What Is the Difference Between DoD and DoR? - Scrum.org](https://www.scrum.org/resources/blog/what-difference-between-definition-done-dod-and-definition-ready-dor)

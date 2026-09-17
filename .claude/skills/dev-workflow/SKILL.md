@@ -34,7 +34,11 @@ description: 새 문제/프로젝트를 저장하거나, 과거 패턴을 검색
 
    예: `docs/01-problem-save/sessions/algorithm-track/2026-09-20-two-sum.md`
 
-4. 저장 후 다음을 확인한다: **알고리즘 트랙의 단순 문제는 보통 2단계를 생략하고 바로
+4. 저장한 세션 파일 맨 아래에
+   [`docs/00-overview/gates.md`](../../../docs/00-overview/gates.md)의 "새 문제/
+   프로젝트용 게이트 로그 템플릿" 블록을 붙여서 시작한다 (1→2 게이트부터 채움). 이게
+   없으면 이 문제가 어느 게이트까지 통과했는지 남길 곳이 없다.
+5. 저장 후 다음을 확인한다: **알고리즘 트랙의 단순 문제는 보통 2단계를 생략하고 바로
    [3단계 패턴 분석](../../../docs/03-pattern-analysis/README.md)으로 간다** — 2단계의
    5단계 파이프라인(BABOK/EARS/Planguage/Kano/RTM)은 무거운 프로젝트 트랙용이다
    ([`docs/02-problem-analysis/README.md`](../../../docs/02-problem-analysis/README.md)의
