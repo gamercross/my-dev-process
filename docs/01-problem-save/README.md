@@ -18,12 +18,11 @@ Specifications*)은 소프트웨어 요구사항 문서의 품질 기준을 정�
 ## 사용 방법
 
 새 문제/프로젝트가 생기면 해당 트랙 파일을 복사해서 (예: `algorithm-track.md` →
-`sessions/2026-09-20-leetcode-42.md` 같은 실제 항목 파일) 채우세요. 이 폴더 안의 파일은
-"템플릿 원본"이고, 실제로 쌓이는 항목들은 트랙별 하위 폴더(예: `sessions/`)에 따로 모으는 걸
-권장합니다.
+`sessions/algorithm-track/2026-09-20-two-sum.md` 같은 실제 항목 파일) 채우세요. 이 폴더
+안의 파일은 "템플릿 원본"이고, 실제로 쌓이는 항목들은 [`sessions/`](sessions/README.md)에
+트랙별로 따로 모읍니다.
 
-> **미해결 사항**: `sessions/` 폴더 구조(파일명 규칙, 트랙별 분리 방식)는 아직 확정된
-> 결정이 아닙니다. [ADR-0001](../03-pattern-analysis/adr/0001-storage-and-interface.md)은
-> "인터페이스를 파일+스킬 하이브리드로 한다"까지만 결정했고, 실제 파일 배치 규칙은
-> [4단계(패턴 구현)](../04-pattern-implementation/README.md)에서 SKILL.md 스켈레톤을 만들
-> 때 함께 확정합니다. 그전까지 위 예시(`sessions/날짜-문제명.md`)는 잠정안입니다.
+> **확정됨 (4단계)**: `sessions/` 폴더 구조는
+> [`docs/01-problem-save/sessions/README.md`](sessions/README.md)와
+> [`.claude/skills/dev-workflow/SKILL.md`](../../.claude/skills/dev-workflow/SKILL.md)에
+> 정리되어 있습니다 — `sessions/<트랙파일명>/<YYYY-MM-DD>-<슬러그>.md` 규칙.

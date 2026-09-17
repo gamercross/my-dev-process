@@ -17,7 +17,7 @@ docs/
   01-problem-save/             1단계: 문제 저장 템플릿 (트랙별 + PRD)
   02-problem-analysis/         2단계: 요구사항 분석 방법론(BABOK/EARS/Planguage/Kano/RTM) + 적용 예시
   03-pattern-analysis/         3단계: 패턴/아키텍처 선택 (ADR-0001 완료)
-  04-pattern-implementation/   4단계: 패턴 스켈레톤 구현 (진행 예정)
+  04-pattern-implementation/   4단계: 패턴 스켈레톤 구현 (완료 — .claude/skills/dev-workflow/)
   05-implementation/           5단계: 실제 구현 (미착수)
   06-service/                  6단계: 배포/서비스 (미착수)
   07-maintenance/              7단계: 회고 + 피드백 반영 (미착수)

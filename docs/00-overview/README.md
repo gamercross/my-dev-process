@@ -1,7 +1,7 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
 - 최초 작성: 2026-09-17
-- 마지막 업데이트: 2026-09-17 (2단계 방법론 심화, 3단계 ADR-0001 확정)
+- 마지막 업데이트: 2026-09-17 (4단계 SKILL.md 스켈레톤 완료)
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
@@ -50,7 +50,7 @@ docs/
   01-problem-save/      1단계: 문제 저장 템플릿 (트랙별 + PRD)
   02-problem-analysis/  2단계: 요구사항 분석 방법론 + 적용 예시
   03-pattern-analysis/  3단계: 패턴/아키텍처 선택 (ADR-0001 완료)
-  04-pattern-implementation/  4단계: 패턴 스켈레톤 구현 (미착수)
+  04-pattern-implementation/  4단계: 패턴 스켈레톤 구현 (SKILL.md 스켈레톤 완료)
   05-implementation/    5단계: 실제 구현 (미착수)
   06-service/           6단계: 배포/서비스 (미착수)
   07-maintenance/       7단계: 회고 + 피드백 반영 (미착수)
@@ -65,13 +65,13 @@ docs/
 | 1. 문제 저장 | ✅ 완료 (초안) | [`docs/01-problem-save/`](../01-problem-save/README.md) |
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
-| 4. 패턴 구현 | 🟡 진행 예정 | ADR-0001의 "새 트랙 자동 인식" 제약을 반영한 `SKILL.md` 스켈레톤 작성. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
+| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | ⬜ 미착수 | [`docs/05-implementation/`](../05-implementation/README.md) |
 | 6. 서비스 | ⬜ 미착수 | [`docs/06-service/`](../06-service/README.md) |
 | 7. 유지보수 | ⬜ 미착수 | [`docs/07-maintenance/`](../07-maintenance/README.md) |
 
-**다음 액션**: 4단계 — ADR-0001에서 정한 하이브리드 구조를 실제로 스켈레톤(SKILL.md 최소
-골격)으로 만들기.
+**다음 액션**: 5단계 — 새 Claude Code 세션에서 `dev-workflow` 스킬을 실제로 트리거해
+명령 1~3(문제 저장/패턴 검색/회고 반영)이 자연어로 잘 동작하는지 검증.
 
 ## 유즈케이스
 
@@ -125,3 +125,5 @@ flowchart LR
 - 2026-09-17: `docs/` 폴더 구조로 분리. 기존 단일 README 내용을 단계별 폴더로 이동.
 - 2026-09-17: 2단계에 BABOK/EARS/Planguage/Kano/RTM 5단계 파이프라인 추가, 3단계에
   ADR-0001(파일+Claude Code 스킬 하이브리드 채택) 추가.
+- 2026-09-17: 4단계 스켈레톤 완료 — `.claude/skills/dev-workflow/SKILL.md`,
+  `docs/01-problem-save/sessions/` 폴더 구조 확정.
