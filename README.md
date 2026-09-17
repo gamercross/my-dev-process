@@ -9,6 +9,9 @@ md 파일만 고치면 됩니다.
 **시작점: [docs/00-overview/README.md](docs/00-overview/README.md)** — 원문제 정의, 전체
 방향 다이어그램, 진행상황, 유즈케이스가 여기 있습니다.
 
+**단계를 제대로 마쳤는지 확인하려면: [docs/00-overview/gates.md](docs/00-overview/gates.md)**
+— 단계별 진입기준(DoR)/완료기준(DoD)과 Go·Kill·Hold·Recycle 게이트 규정.
+
 ## 폴더 구조
 
 ```

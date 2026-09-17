@@ -1,11 +1,14 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
 - 최초 작성: 2026-09-17
-- 마지막 업데이트: 2026-09-17 (4단계 SKILL.md 스켈레톤 완료)
+- 마지막 업데이트: 2026-09-17 (게이트 규정 추가)
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
 그 단계를 수정할 땐 해당 폴더의 md 파일만 고치면 됩니다.
+
+**각 단계를 제대로 마쳤는지 확인하고 넘어가려면 → [gates.md](gates.md)** (진입기준/완료기준
++ Go·Kill·Hold·Recycle 게이트 결정 규정)
 
 ## 원문제 정의
 
@@ -129,3 +132,5 @@ flowchart LR
   `docs/01-problem-save/sessions/` 폴더 구조 확정.
 - 2026-09-17: 4단계에 Walking Skeleton(Cockburn)/Tracer Bullet(Hunt & Thomas)/Spike(XP)
   개념과 "Make it work, make it right, make it fast" 원칙 추가.
+- 2026-09-17: [gates.md](gates.md) 추가 — DoR/DoD(스크럼) + Stage-Gate(Cooper)
+  Go/Kill/Hold/Recycle 게이트 규정으로 단계별 진행 여부를 판단.
