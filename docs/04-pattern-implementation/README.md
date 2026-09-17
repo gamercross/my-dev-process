@@ -11,3 +11,10 @@
   스캐폴딩)
 - 시간복잡도/구조 검증용 간단 테스트
 - 검증 완료 후 5단계로 전달
+
+## ADR-0001에서 넘어온 결정 사항
+
+- `.claude/skills/dev-workflow/SKILL.md` 스켈레톤 작성 — **트랙 목록을 하드코딩하지 않고
+  `docs/01-problem-save/`의 트랙 폴더를 자동 인식**하도록 설계 (Supportability NFR 위반 방지)
+- [`docs/01-problem-save/README.md`](../01-problem-save/README.md)에 미해결로 남겨둔
+  `sessions/` 폴더 구조(파일명 규칙, 트랙별 분리 방식)를 여기서 확정

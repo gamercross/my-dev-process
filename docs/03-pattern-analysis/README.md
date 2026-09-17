@@ -18,8 +18,9 @@ flowchart LR
 
 ## 1. 후보 도출
 
-- **알고리즘 트랙** → [01-algorithm-paradigms.md](01-algorithm-paradigms.md) (CLRS 계열
-  4대 패러다임: Divide and Conquer / Dynamic Programming / Greedy / Backtracking)
+- **알고리즘 트랙** → [01-algorithm-paradigms.md](01-algorithm-paradigms.md) — CLRS 계열
+  4대 설계 패러다임(Divide and Conquer / Dynamic Programming / Greedy / Backtracking)
+  **+** Two Pointers/Sliding Window 같은 구현 기법 패턴, 두 계층을 함께 확인
 - **프로젝트 트랙** → [02-architecture-styles.md](02-architecture-styles.md) (Mark Richards
   5대 아키텍처 스타일: Layered / Event-Driven / Microkernel / Microservices / Space-Based)
 
