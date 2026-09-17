@@ -12,12 +12,6 @@
 - [`docs/01-problem-save/sessions/`](../01-problem-save/sessions/README.md) — 1단계에서
   미해결로 남겨뒀던 세션 폴더 구조를 확정 (`sessions/<트랙파일명>/<날짜>-<슬러그>.md`)
 
-## ADR-0001에서 넘어온 결정 사항 (처리 완료)
-
-- ~~트랙 목록을 하드코딩하지 않고 `docs/01-problem-save/`의 트랙 파일을 자동 인식~~ →
-  SKILL.md에 "README.md/prd-template.md를 제외한 모든 `*.md` = 트랙" 규칙으로 반영
-- ~~`sessions/` 폴더 구조 확정~~ → 위 참고
-
 ## 스켈레톤 검증 (구조만, 실제 사용 아님)
 
 트랙 자동 인식 로직을 현재 저장소에 대입해 스모크 테스트함:
