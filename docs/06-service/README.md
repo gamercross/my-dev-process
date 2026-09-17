@@ -4,10 +4,16 @@
 
 완성된 구현을 실제로 사용 가능한 형태로 내보내는 단계.
 
+## 방향을 정하는 표준 개념
+
+- **프로젝트 트랙 배포** → [01-twelve-factor-app.md](01-twelve-factor-app.md) — Heroku의
+  Twelve-Factor App 방법론 중 개인 프로젝트에 우선 적용할 5가지(Config/Backing
+  Services/Build-Release-Run/Processes/Logs)
+
 ## 이 단계에서 채울 내용 (예정)
 
 - **알고리즘 트랙**: 제출/채점, 성능(런타임/메모리) 확인
-- **프로젝트 트랙**: 배포, CI/CD, 모니터링
+- **프로젝트 트랙**: 배포, CI/CD, 모니터링 (Twelve-Factor 원칙 적용)
 - 완료 후 [7단계](../07-maintenance/README.md)로 전달
 
 ## 놓치면 안 되는 연결: Planguage Goal 실측
