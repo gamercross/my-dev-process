@@ -12,6 +12,9 @@
 - **프로젝트 트랙** → [02-project-track-skeleton.md](02-project-track-skeleton.md) —
   Walking Skeleton(Cockburn) / Tracer Bullet(Hunt & Thomas) / Spike(XP) 세 개념 중
   상황에 맞게 선택. **버릴 코드인지 남길 코드인지**가 핵심 구분 기준
+- **패턴을 다이어그램으로 구상하기** → [03-diagramming-guide.md](03-diagramming-guide.md) —
+  순서도(ISO 5807) / C4 모델(Simon Brown) / UML 구조·행동 다이어그램 중 "어떤 질문에
+  답하고 싶은가"로 고르는 기준
 
 ## 만든 것
 
