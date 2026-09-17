@@ -34,7 +34,11 @@ description: 새 문제/프로젝트를 저장하거나, 과거 패턴을 검색
 
    예: `docs/01-problem-save/sessions/algorithm-track/2026-09-20-two-sum.md`
 
-4. 저장 후 [2단계](../../../docs/02-problem-analysis/README.md)로 넘어갈지 확인한다.
+4. 저장 후 다음을 확인한다: **알고리즘 트랙의 단순 문제는 보통 2단계를 생략하고 바로
+   [3단계 패턴 분석](../../../docs/03-pattern-analysis/README.md)으로 간다** — 2단계의
+   5단계 파이프라인(BABOK/EARS/Planguage/Kano/RTM)은 무거운 프로젝트 트랙용이다
+   ([`docs/02-problem-analysis/README.md`](../../../docs/02-problem-analysis/README.md)의
+   "적용 범위" 참고). 프로젝트 트랙이거나 문제가 복잡하면 [2단계](../../../docs/02-problem-analysis/README.md)로.
 
 ## 명령 2: 패턴 검색 (3단계)
 

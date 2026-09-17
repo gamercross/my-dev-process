@@ -34,10 +34,21 @@ $ for f in docs/01-problem-save/*.md; do ...제외 규칙 적용... done
 
 `README.md`, `prd-template.md`가 정확히 제외되고 트랙 2개만 잡힘 — 설계대로 동작.
 
+이어서 **자연어 트리거 없이 SKILL.md 절차를 손으로 따라가는 드라이런**도 진행함
+(Two Sum 예시, [세션 파일](../01-problem-save/sessions/algorithm-track/2026-09-17-two-sum.md)):
+
+- 명령 1(문제 저장): 통과 — 트랙 목록 나열 → 필드 채움 → `sessions/algorithm-track/2026-09-17-two-sum.md`로 저장
+- 명령 2(패턴 검색): 통과 — 빈 `catalog/patterns.md`에서 검색 실패 시 표준 카탈로그로
+  올바르게 폴백함
+- 이 드라이런에서 **실제 결함을 하나 발견**: 2단계 5단계 파이프라인이 알고리즘 트랙
+  단순 문제엔 과함 → [2단계 README](../02-problem-analysis/README.md)에 "적용 범위"
+  절 추가, `catalog/checklist.md`에 회고 항목 추가, SKILL.md 명령 1 step 4 수정으로 해결
+
 ## 아직 검증 안 된 것 (5단계로 넘김)
 
-- 명령 1~3을 실제 Claude Code 세션에서 트리거해서 자연어로 잘 반응하는지 (스킬 파일은
-  이번 세션에서 새로 추가돼서, 새 세션에서 로드된 뒤에나 실제 트리거 테스트 가능) — 이건
-  Walking Skeleton의 일부가 아니라 [Spike](02-project-track-skeleton.md) 성격의
-  불확실성이므로, 5단계에서 짧게 확인만 하고 넘어간다
+- **자연어 트리거 자체**(스킬 설명文에 맞는 요청을 했을 때 실제로 발동하는지)는 이
+  드라이런으로도 확인 못 함 — Claude Code가 세션 시작 시 스킬 목록을 고정하기 때문에,
+  이 저장소 경로에서 새 세션을 열어야 확인 가능. Walking Skeleton의 일부가 아니라
+  [Spike](02-project-track-skeleton.md) 성격의 불확실성이므로, 5단계에서 짧게 확인만
+  하고 넘어간다
 - Planguage Usability Goal(템플릿 작성 5분 이내) 실측 — 6단계에서 확인
