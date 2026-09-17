@@ -1,44 +1,51 @@
 # 3단계: 패턴 분석
 
-2단계에서 확정된 요구사항을 놓고, 어떤 패턴/아키텍처로 풀지 후보를 비교해 결정하는 단계.
-트랙에 따라 쓰는 도구가 다릅니다.
+2단계에서 확정된 요구사항을 놓고, 어떤 패턴/아키텍처로 풀지 정하는 단계. **후보 도출 →
+트레이드오프 평가 → 결정 기록** 3단계 파이프라인으로 진행합니다.
 
-## 알고리즘 트랙
+```mermaid
+flowchart LR
+    R[2단계 요구사항] --> C[후보 도출]
+    C --> E[트레이드오프 평가]
+    E --> D[결정 기록]
+    D --> N[4단계: 패턴 구현]
 
-- [`docs/catalog/patterns.md`](../catalog/patterns.md)에서 태그가 일치하는 항목 검색
-- 후보가 여러 개면 트레이드오프(시간복잡도, 구현 난이도)를 표로 비교
-- 선택 근거를 한 줄이라도 남긴다 (7단계 회고에서 "왜 이걸 골랐는지" 복기 가능하게)
-
-## 프로젝트 트랙 — ADR (Architecture Decision Record)
-
-아키텍처/구조 선택처럼 오래 남아야 하는 결정은 Michael Nygard가 제안한 **ADR** 포맷으로
-기록합니다. 소프트웨어 업계 표준 관행이며 AWS·Azure·Google Cloud 팀들도 이 포맷을 씁니다.
-
-### ADR 템플릿
-
+    C -.알고리즘 트랙.-> C1[4대 알고리즘 패러다임]
+    C -.프로젝트 트랙.-> C2[5대 아키텍처 스타일]
+    E -.-> E1[ATAM 축약 시나리오 비교]
+    D -.-> D1[ADR / MADR]
 ```
-# ADR-000X: <결정 제목>
 
-- Status: Proposed / Accepted / Rejected / Deprecated / Superseded
-- Date:
+## 1. 후보 도출
 
-## Context
-(어떤 문제/제약 때문에 이 결정이 필요한가 — 2단계 요구사항 인용)
+- **알고리즘 트랙** → [01-algorithm-paradigms.md](01-algorithm-paradigms.md) (CLRS 계열
+  4대 패러다임: Divide and Conquer / Dynamic Programming / Greedy / Backtracking)
+- **프로젝트 트랙** → [02-architecture-styles.md](02-architecture-styles.md) (Mark Richards
+  5대 아키텍처 스타일: Layered / Event-Driven / Microkernel / Microservices / Space-Based)
 
-## Decision
-(무엇을 하기로 했는가)
+두 경우 모두 `docs/catalog/patterns.md`에서 과거 경험을 먼저 검색합니다.
 
-## Considered Alternatives
-(고려했지만 채택 안 한 대안과 기각 이유)
+## 2. 트레이드오프 평가
 
-## Consequences
-(이 결정으로 생기는 장단점, 특히 나중에 발목 잡을 수 있는 것)
-```
+후보가 2개 이상이면 → [03-tradeoff-evaluation-atam.md](03-tradeoff-evaluation-atam.md)
+(SEI ATAM을 개인 프로젝트용으로 축약: 2단계 Planguage 시나리오에 후보들을 대입해 비교)
+
+후보가 1개뿐이거나 요구사항이 Kano "Basic"이면 이 단계는 생략 가능.
+
+## 3. 결정 기록
+
+- **알고리즘 트랙**: 선택 근거 한 줄만 남기면 충분 (해당 문제 저장 항목에)
+- **프로젝트 트랙**: [adr/](adr/README.md)에 ADR로 기록 — 번호 매기기·불변성·상태
+  생애주기 등 실무 규칙 포함
 
 ### 이 저장소의 ADR 목록
 
-- [ADR-0001: 워크플로우 인터페이스를 파일+Claude Code 스킬 하이브리드로 결정](adr/0001-storage-and-interface.md)
+| ID | 제목 | 상태 |
+|---|---|---|
+| [0001](adr/0001-storage-and-interface.md) | 워크플로우 인터페이스를 파일+Claude Code 스킬 하이브리드로 결정 | Accepted |
 
 ## 출처
-- Nygard, M., *Documenting Architecture Decisions* (2011) — [원문 포맷 정리](https://github.com/joelparkerhenderson/architecture-decision-record/blob/main/locales/en/templates/decision-record-template-by-michael-nygard/index.md)
-- [Architectural Decision Records](https://adr.github.io/)
+- Cormen et al., *Introduction to Algorithms* (알고리즘 패러다임 분류)
+- Richards, M., *Software Architecture Patterns*, O'Reilly (아키텍처 스타일 카탈로그)
+- Kazman, Klein, Clements, *ATAM*, SEI/CMU (트레이드오프 평가)
+- Nygard, M., *Documenting Architecture Decisions* (2011); [MADR](https://adr.github.io/madr/) (결정 기록)
