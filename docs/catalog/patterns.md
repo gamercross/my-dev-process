@@ -33,6 +33,9 @@
   이중 루프 브루트포스(O(n²))를 O(n)으로 줄이는 가장 흔한 방법.
 - 트레이드오프: 시간 O(n) 대신 공간 O(n) 추가 사용. 정렬이 필요 없어 투 포인터보다
   구현이 간단하지만, 입력이 이미 정렬돼 있고 메모리가 빠듯하면 투 포인터가 더 나을 수 있음.
-- 예시 문제/사례: [Two Sum](../01-problem-save/sessions/algorithm-track/2026-09-17-two-sum.md) —
-  브루트포스(이중 루프)로 먼저 정답 확인 후, 해시맵으로 최적화하는 게 자연스러운 다음 단계.
+- 예시 문제/사례:
+  - [Two Sum](../01-problem-save/sessions/algorithm-track/2026-09-17-two-sum.md) —
+    브루트포스(이중 루프)로 먼저 정답 확인 후, 해시맵으로 최적화하는 게 자연스러운 다음 단계.
+  - [Contains Duplicate](../01-problem-save/sessions/algorithm-track/2026-09-17-contains-duplicate.md) —
+    "해시" 키워드로 이 카탈로그에서 검색해 재사용 확인 (핵심 피드백 루프 실증, 2026-09-17)
 - 처음 배운 날짜/출처: 2026-09-17, Two Sum 드라이런 회고
