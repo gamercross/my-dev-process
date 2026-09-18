@@ -1,7 +1,6 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
-- 최초 작성: 2026-09-17
-- 마지막 업데이트: 2026-09-18 (전체 방향 다이어그램에 등급 분기 반영)
+- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-18 (자세한 변경 이력은 [worklog.md](worklog.md))
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
@@ -139,24 +138,7 @@ flowchart LR
 항목 식별 → `catalog/` 파일에 추가 → git 커밋으로 이력 남김. 관련: FR3, 원문제 핵심 루프
 ([`docs/07-maintenance/`](../07-maintenance/README.md))
 
-## 변경 이력
+## 왜 지금 이런 모양인지
 
-- 2026-09-17: `docs/` 폴더 구조로 분리. 기존 단일 README 내용을 단계별 폴더로 이동.
-- 2026-09-17: 2단계에 BABOK/EARS/Planguage/Kano/RTM 5단계 파이프라인 추가, 3단계에
-  ADR-0001(파일+Claude Code 스킬 하이브리드 채택) 추가.
-- 2026-09-17: 4단계 스켈레톤 완료 — `.claude/skills/dev-workflow/SKILL.md`,
-  `docs/01-problem-save/sessions/` 폴더 구조 확정.
-- 2026-09-17: 4단계에 Walking Skeleton(Cockburn)/Tracer Bullet(Hunt & Thomas)/Spike(XP)
-  개념과 "Make it work, make it right, make it fast" 원칙 추가.
-- 2026-09-17: [gates.md](gates.md) 추가 — DoR/DoD(스크럼) + Stage-Gate(Cooper)
-  Go/Kill/Hold/Recycle 게이트 규정으로 단계별 진행 여부를 판단.
-- 2026-09-17: Two Sum → 패턴 등록 → Contains Duplicate에서 재사용 확인으로 핵심
-  피드백 루프 실증. 개별 문제용 게이트 로그 템플릿을 `gates.md`에 추가.
-- 2026-09-17: [scope-tiers.md](scope-tiers.md) 추가 — Stage-Gate Full/Xpress/Lite
-  (Cooper) + Two-Minute Rule(GTD, David Allen)로 7단계를 다 밟을지 미리 정하는 기준.
-- 2026-09-17: [04-pattern-implementation/03-diagramming-guide.md](../04-pattern-implementation/03-diagramming-guide.md)
-  추가 — 순서도(ISO 5807)/C4 모델(Simon Brown)/UML 구조·행동 다이어그램 선택 기준.
-- 2026-09-17: 루트 README를 실제 저장소 상태에 맞게 동기화 (퀵스타트 절 추가).
-- 2026-09-18: 전체 방향 다이어그램이 여태 완전 선형이었던 걸 고쳐서, 등급 판단
-  진입점과 Xpress/Lite 스킵 경로를 반영. 이전 버전은 scope-tiers.md 등급 체계와
-  실제로 안 맞는 상태였음.
+이 문서에는 결과만 담았습니다. 어떤 시행착오를 거쳐 지금 구조가 됐는지는
+[worklog.md](worklog.md)에 날짜순으로 정리돼 있습니다.
