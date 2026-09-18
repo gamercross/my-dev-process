@@ -6,7 +6,8 @@
 
 - [algorithm-track.md](algorithm-track.md) — 알고리즘 문제풀이용 (ICPC 문제 명세 규격 기반)
 - [project-track.md](project-track.md) — 실무/사이드 프로젝트용 (GitHub Issue Template 규격 기반)
-- [prd-template.md](prd-template.md) — 프로젝트가 커질 때 문제저장+분석을 합친 확장판 (PRD)
+- [prd-template.md](prd-template.md) — Full 등급 프로젝트 트랙 전용 확장판 (PRD).
+  언제 쓰는지는 [scope-tiers.md](../00-overview/scope-tiers.md) 등급으로 정함
 
 ## 이 단계에서 지켜야 할 규칙 (IEEE 830 기반)
 
