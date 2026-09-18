@@ -1,7 +1,7 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
 - 최초 작성: 2026-09-17
-- 마지막 업데이트: 2026-09-17 (규모 판단 기준 추가)
+- 마지막 업데이트: 2026-09-18 (전체 방향 다이어그램에 등급 분기 반영)
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
@@ -29,37 +29,50 @@
 
 ```mermaid
 flowchart TD
-    S1[1. 문제 저장] --> S2[2. 문제 분석]
+    N[새 일] --> T{등급 판단<br/>scope-tiers.md}
+    T -->|즉시처리: 2~5분| END0[바로 처리, 끝]
+
+    T -->|Lite/Xpress/Full| S1[1. 문제 저장]
+    S1 --> S2[2. 문제 분석]
     S2 --> S3[3. 패턴 분석]
     S3 --> S4[4. 패턴 구현·스켈레톤]
     S4 --> S5[5. 구현]
     S5 --> S6[6. 서비스]
     S6 --> S7[7. 유지보수 / 회고]
 
+    S1 -.Xpress: 2단계 Skip.-> S3
+    S1 -.Lite: 3~6단계도 Skip.-> S7
+
     S7 -. 새로 배운 패턴 반영 .-> CAT[(패턴 카탈로그)]
     S7 -. 놓친 체크리스트 항목 반영 .-> CHK[(분석 체크리스트)]
-    CAT -. 다음 프로젝트에서 참조 .-> S3
-    CHK -. 다음 프로젝트에서 참조 .-> S2
+    CAT -. 다음 항목 3단계에서 참조 .-> S3
+    CHK -. 다음 Full 항목 2단계에서 참조 .-> S2
 
     style CAT fill:#2b2b40,stroke:#888,color:#fff
     style CHK fill:#2b2b40,stroke:#888,color:#fff
+    style END0 fill:#2b2b40,stroke:#888,color:#fff
 ```
 
-핵심: 1→7은 선형이 아니라 **7단계 회고가 2·3단계 참조 자료(카탈로그/체크리스트)로 역류하는
-피드백 루프**입니다. 이 루프가 없으면 원문제가 해결되지 않습니다.
+핵심 둘:
+1. 1→7은 선형이 아니라 **7단계 회고가 2·3단계 참조 자료(카탈로그/체크리스트)로 역류하는
+   피드백 루프**입니다. 이 루프가 없으면 원문제가 해결되지 않습니다.
+2. 모든 일이 7단계를 다 밟지도 않습니다 — [scope-tiers.md](scope-tiers.md) 등급에 따라
+   Xpress는 2단계를, Lite는 3~6단계까지 건너뜁니다. Two Sum·Contains Duplicate가 실제
+   Xpress 사례입니다 ([게이트 로그](gates.md#새-문제프로젝트용-게이트-로그-템플릿) 참고).
 
 ## 폴더 구조
 
 ```
+.claude/skills/dev-workflow/   Claude Code 스킬 — 명령 3개(문제 저장/패턴 검색/회고 반영)
 docs/
-  00-overview/          이 문서. 원문제, 전체 다이어그램, 진행상황, 유즈케이스
-  01-problem-save/      1단계: 문제 저장 템플릿 (트랙별 + PRD)
-  02-problem-analysis/  2단계: 요구사항 분석 방법론 + 적용 예시
-  03-pattern-analysis/  3단계: 패턴/아키텍처 선택 (ADR-0001 완료)
-  04-pattern-implementation/  4단계: 패턴 스켈레톤 구현 (SKILL.md 스켈레톤 완료)
-  05-implementation/    5단계: 실제 구현 (미착수)
-  06-service/           6단계: 배포/서비스 (미착수)
-  07-maintenance/       7단계: 회고 + 피드백 반영 (미착수)
+  00-overview/          이 문서 + gates.md(게이트 규정) + scope-tiers.md(규모 판단)
+  01-problem-save/      1단계: 문제 저장 템플릿(트랙별 + PRD) + sessions/(실제 저장된 항목)
+  02-problem-analysis/  2단계: 요구사항 분석 방법론 + 적용 범위(경량화 규칙) + 적용 예시
+  03-pattern-analysis/  3단계: 패턴/아키텍처 선택 (ADR-0001 완료) + adr/
+  04-pattern-implementation/  4단계: 패턴 스켈레톤 구현 (SKILL.md 스켈레톤 완료) + 다이어그램 선택 가이드
+  05-implementation/    5단계: TDD + 동등분할·경계값 분석 (미착수)
+  06-service/           6단계: Twelve-Factor App (미착수)
+  07-maintenance/       7단계: 회고 — 5 Whys + Blameless Postmortem (미착수)
   catalog/              패턴 카탈로그, 분석 체크리스트 (공용 참조 자료, 계속 누적)
 ```
 
@@ -141,3 +154,9 @@ flowchart LR
   피드백 루프 실증. 개별 문제용 게이트 로그 템플릿을 `gates.md`에 추가.
 - 2026-09-17: [scope-tiers.md](scope-tiers.md) 추가 — Stage-Gate Full/Xpress/Lite
   (Cooper) + Two-Minute Rule(GTD, David Allen)로 7단계를 다 밟을지 미리 정하는 기준.
+- 2026-09-17: [04-pattern-implementation/03-diagramming-guide.md](../04-pattern-implementation/03-diagramming-guide.md)
+  추가 — 순서도(ISO 5807)/C4 모델(Simon Brown)/UML 구조·행동 다이어그램 선택 기준.
+- 2026-09-17: 루트 README를 실제 저장소 상태에 맞게 동기화 (퀵스타트 절 추가).
+- 2026-09-18: 전체 방향 다이어그램이 여태 완전 선형이었던 걸 고쳐서, 등급 판단
+  진입점과 Xpress/Lite 스킵 경로를 반영. 이전 버전은 scope-tiers.md 등급 체계와
+  실제로 안 맞는 상태였음.
