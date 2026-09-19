@@ -83,16 +83,14 @@ docs/
 | 1. 문제 저장 | ✅ 완료 (초안) | [`docs/01-problem-save/`](../01-problem-save/README.md) |
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
-| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
+| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | 🟡 진행 중 | Two Sum·Contains Duplicate(TDD)에 이어, 카탈로그 검색 CLI를 EARS 요구사항 기반 TDD로 구현(Full 등급 첫 사례). [`implementations/`](../../implementations/), [`docs/05-implementation/`](../05-implementation/README.md) |
 | 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 성능 실측 + 카탈로그 검색 CLI로 **Planguage Goal 실측 규칙 첫 실증**(0.5초 목표 대비 34ms). [`docs/06-service/`](../06-service/README.md) |
 | 7. 유지보수 | 🟡 진행 중 | 세 항목 모두 회고 완료 → `catalog/checklist.md`에 4개 항목 추가, `catalog/patterns.md`에 첫 프로젝트 트랙 패턴 등록. [`docs/07-maintenance/`](../07-maintenance/README.md) |
 
-**다음 액션**: Xpress 알고리즘 항목 2개 + **Full 등급 프로젝트 트랙 1개(카탈로그
-검색 CLI)까지 전부 1→7 완주** — Full 등급 규칙(PRD, 5단계 파이프라인, ADR, Walking
-Skeleton, Planguage Goal 실측)이 처음으로 전부 실증됨. 다음은 세 번째 알고리즘
-문제나 두 번째 프로젝트 트랙 항목으로 반복 검증, 또는 새로 나온 checklist 항목
-4개를 실제로 다음 항목에 적용해보는 것.
+**다음 액션**: [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)를
+5단계(TDD로 스택 기반 O(n) 최적화)로 진행. 브루트포스는 확인됐고, 이 문제로 처음
+등록되는 "구현 기법 패턴"이 카탈로그에 하나 더 쌓임(현재는 해시맵 원패스 탐색뿐).
 
 ## 유즈케이스
 
