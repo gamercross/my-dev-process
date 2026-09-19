@@ -46,6 +46,7 @@ flowchart LR
 | ID | 제목 | 상태 |
 |---|---|---|
 | [0001](adr/0001-storage-and-interface.md) | 워크플로우 인터페이스를 파일+Claude Code 스킬 하이브리드로 결정 | Accepted |
+| [0002](adr/0002-catalog-search-cli-architecture.md) | 카탈로그 검색 CLI를 단일 파일 계층형 스크립트로 구현 (MADR) | Accepted |
 
 ## 출처
 - Cormen et al., *Introduction to Algorithms* (알고리즘 패러다임 분류)
