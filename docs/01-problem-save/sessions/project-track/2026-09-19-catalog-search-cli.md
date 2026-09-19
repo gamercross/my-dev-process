@@ -161,3 +161,28 @@ FR1~FR4를 그대로 테스트 케이스로 옮겨서 Red-Green-Refactor 진행:
 
 **게이트**: `5 → 6` = Go — 단위 테스트 통과(6개), FR1~FR4(EARS Unwanted-behavior
 포함) 전부 커버.
+
+## 6단계: 서비스 (프로젝트 트랙 — Planguage Goal 실측)
+
+[Twelve-Factor App](../../../06-service/01-twelve-factor-app.md) 중 이 CLI에
+해당하는 항목:
+
+| 요소 | 적용 |
+|---|---|
+| Config | `CATALOG_ROOT` 환경변수로 카탈로그 위치 설정(FR4) — 하드코딩 안 함 |
+| Backing Services | `docs/catalog/`를 "붙였다 뗄 수 있는 자원"으로 취급(경로만 설정으로 바꿈) |
+| Processes | 상태 없음(stateless) — 실행마다 파일을 새로 읽고 끝남 |
+| Logs | 표준출력(`print`)으로만 흘려보냄, 파일 로그 직접 관리 안 함 |
+
+Planguage Goal 실측(위 2단계에서 정한 값):
+
+| Goal | 목표 | 실측 |
+|---|---|---|
+| Usability: 검색 소요시간 | 0.5초 이내(Stretch 0.1초) | **34.0 ms** — Stretch까지 달성 |
+| Supportability: 외부 패키지 수 | 0개 | **0개** (`os`, `sys`, `pathlib` — 전부 표준 라이브러리) |
+
+두 Goal 모두 달성. 알고리즘 트랙(Two Sum/Contains Duplicate)에서는 Planguage
+Goal 자체가 없어 "제출/채점+성능"으로 대체했었는데, 이 프로젝트가 **Planguage
+Goal 실측 규칙을 실제로 적용한 첫 사례**다.
+
+**게이트**: `6 → 7` = Go — Twelve-Factor 원칙 적용 확인, Planguage Goal 둘 다 달성(기록됨).

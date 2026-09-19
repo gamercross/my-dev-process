@@ -1,7 +1,9 @@
 # 6단계: 서비스
 
 > 상태: 🟡 진행 중 — [Two Sum](../../implementations/algorithm-track/two-sum/),
-> [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/) 성능 확인 완료
+> [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/) 성능 확인,
+> [카탈로그 검색 CLI](../../implementations/project-track/catalog-search-cli/) Planguage
+> Goal 실측 완료(첫 프로젝트 트랙 사례)
 
 완성된 구현을 실제로 사용 가능한 형태로 내보내는 단계. **2단계에서 정한 Planguage
 Goal을 실측하는 자리**이기도 합니다 — 정량화만 해놓고 실측을 안 하면 2단계 작업이
@@ -57,3 +59,18 @@ Contains Duplicate는 브루트포스를 제약조건 상한(10^5)에서 직접 
 | Supportability: "새 트랙 추가 시 기존 파일 0개 수정" | 다음 트랙 추가 커밋에서 `git diff --stat`으로 확인 |
 
 측정 결과가 Goal 미달이면, 그 사실 자체가 7단계 회고의 입력이 됩니다.
+
+## 프로젝트 트랙 실제 사례 — 카탈로그 검색 CLI
+
+위의 Two Sum/Contains Duplicate는 알고리즘 트랙이라 Planguage Goal 자체가
+없었는데, [카탈로그 검색 CLI](../../implementations/project-track/catalog-search-cli/)가
+이 저장소에서 Planguage Goal 실측 규칙을 **실제로 적용한 첫 사례**입니다.
+
+| Goal | 목표 | 실측 |
+|---|---|---|
+| Usability: 검색 소요시간 | 0.5초 이내 | 34.0 ms |
+| Supportability: 외부 패키지 수 | 0개 | 0개(표준 라이브러리만) |
+
+Twelve-Factor App 중 실제로 적용된 것: Config(`CATALOG_ROOT` 환경변수),
+Backing Services(카탈로그 경로를 붙였다 뗄 수 있는 자원으로 취급), Processes
+(무상태), Logs(표준출력).
