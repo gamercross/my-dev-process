@@ -118,3 +118,46 @@ MoSCoW×Kano, RTM은 5개 미만이라 생략 규칙에 따라 해당 없음).
 스크립트 채택.
 
 **게이트**: `3 → 4` = Go — ADR-0002 Accepted.
+
+## 4단계: 패턴 구현 (Walking Skeleton)
+
+[`implementations/project-track/catalog-search-cli/catalog_search.py`](../../../../implementations/project-track/catalog-search-cli/catalog_search.py)에
+핵심 경로(입력 → 검색 → 출력)만 최소로 연결. FR2(폴백 메시지)·FR3(대소문자
+무시)·FR4(CATALOG_ROOT)는 아직 안 채움 — [Walking Skeleton](../../../04-pattern-implementation/02-project-track-skeleton.md)
+원칙대로 "버릴 코드가 아니라 5단계에서 자라날 골격"만 증명.
+
+스모크 테스트:
+```
+$ python3 catalog_search.py "해시맵"
+[patterns.md] '해시맵' 포함됨
+$ python3 catalog_search.py "존재하지않는키워드"
+(스켈레톤: 아직 폴백 메시지 없음)
+```
+
+**게이트**: `4 → 5` = Go — 핵심 경로 스모크 테스트 통과(주요 컴포넌트 실제로 연결됨).
+
+## 5단계: 구현 (Full 등급 — 2단계 EARS 요구사항 전부 커버)
+
+[`test_catalog_search.py`](../../../../implementations/project-track/catalog-search-cli/test_catalog_search.py)에
+FR1~FR4를 그대로 테스트 케이스로 옮겨서 Red-Green-Refactor 진행:
+
+- Red: 테스트를 스켈레톤(4단계)에 대고 실행 → `resolve_catalog_dir` 등이 없어
+  `ImportError`로 실패
+- Green: FR1~FR4를 전부 구현(대소문자 무시 검색, 폴백 메시지, `CATALOG_ROOT`
+  환경변수) → 처음엔 FR3 테스트가 실패했는데, **구현이 아니라 테스트가
+  잘못됨**을 발견함(아래 참고)
+- Refactor: ADR-0002의 Layered 구조 그대로 `resolve_catalog_dir` / `search` /
+  `main` 3계층으로 정리, `implementations/run_all_tests.py`가 `test_solution.py`만
+  찾도록 하드코딩돼 있던 걸 `test_*.py`로 일반화(이 프로젝트의 테스트 파일명이
+  달라서 발견됨)
+
+**발견한 것 (7단계 회고로 넘길 재료)**: FR3 테스트가 "세 가지 대소문자 입력의
+출력 문자열이 완전히 같아야 한다"고 검사했는데, 실제로는 출력 메시지가 사용자
+입력 원문을 그대로 보여주는 게 의도된 동작이라 문자열이 다른 게 정상이었다.
+"검색이 성공했는가"만 확인하도록 테스트를 고쳤다.
+
+`python3 implementations/run_all_tests.py`로 이 프로젝트 + 기존 두 알고리즘
+구현까지 3개 전체(17개 테스트)가 함께 통과하는 것 확인.
+
+**게이트**: `5 → 6` = Go — 단위 테스트 통과(6개), FR1~FR4(EARS Unwanted-behavior
+포함) 전부 커버.
