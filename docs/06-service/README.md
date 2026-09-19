@@ -23,10 +23,10 @@ flowchart LR
 |---|---|---|
 | 프로젝트 | [01-twelve-factor-app.md](01-twelve-factor-app.md) | Heroku Twelve-Factor App 중 개인 프로젝트에 우선 적용할 5가지(Config/Backing Services/Build-Release-Run/Processes/Logs) |
 
-## 이 단계에서 채울 내용 (예정)
+## 이 단계에서 하는 일
 
-- **알고리즘 트랙**: 제출/채점, 성능(런타임/메모리) 확인
-- **프로젝트 트랙**: 배포, CI/CD, 모니터링 (Twelve-Factor 원칙 적용)
+- **알고리즘 트랙**: 제출/채점 대신 성능(런타임) 실측 → 아래 "알고리즘 트랙 성능 실측"
+- **프로젝트 트랙**: Twelve-Factor 원칙 적용 + Planguage Goal 실측 → 아래 두 섹션
 - 완료 후 [7단계](../07-maintenance/README.md)로 전달
 
 > **이 저장소의 한계**: 실제 LeetCode 제출은 이 세션에서 할 수 없습니다(계정/브라우저

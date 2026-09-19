@@ -1,6 +1,6 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
-- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-18 (자세한 변경 이력은 [worklog.md](worklog.md))
+- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-19 (자세한 변경 이력은 [worklog.md](worklog.md))
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
@@ -69,9 +69,9 @@ docs/
   02-problem-analysis/  2단계: 요구사항 분석 방법론 + 적용 범위(경량화 규칙) + 적용 예시
   03-pattern-analysis/  3단계: 패턴/아키텍처 선택 (ADR-0001 완료) + adr/
   04-pattern-implementation/  4단계: 패턴 스켈레톤 구현 (SKILL.md 스켈레톤 완료) + 다이어그램 선택 가이드
-  05-implementation/    5단계: TDD + 동등분할·경계값 분석 (미착수)
-  06-service/           6단계: Twelve-Factor App (미착수)
-  07-maintenance/       7단계: 회고 — 5 Whys + Blameless Postmortem (미착수)
+  05-implementation/    5단계: TDD + 동등분할·경계값 분석 (5개 항목 적용 완료)
+  06-service/           6단계: Twelve-Factor App + 성능 실측 (5개 항목 적용 완료)
+  07-maintenance/       7단계: 회고 — 5 Whys + Blameless Postmortem (5개 항목 적용 완료)
   catalog/              패턴 카탈로그, 분석 체크리스트 (공용 참조 자료, 계속 누적)
 ```
 
