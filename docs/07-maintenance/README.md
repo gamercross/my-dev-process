@@ -1,9 +1,7 @@
 # 7단계: 유지보수
 
-> 상태: 🟡 진행 중 — [Two Sum](../01-problem-save/sessions/algorithm-track/2026-09-17-two-sum.md#회고),
-> [Contains Duplicate](../01-problem-save/sessions/algorithm-track/2026-09-17-contains-duplicate.md#회고),
-> [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md#7단계-유지보수-회고),
-> [카탈로그 검색 CLI](../01-problem-save/sessions/project-track/2026-09-19-catalog-search-cli.md#7단계-유지보수-회고) 완료
+> 상태: 🟡 진행 중 — 5개 항목 회고 완료(1→7 완주). 전체 목록·회고 링크는
+> [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
 
 이 워크플로우의 핵심 피드백 루프가 일어나는 단계 (원문제: "배운 게 재사용 안 됨"을
 해결하는 지점).

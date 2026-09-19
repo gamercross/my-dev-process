@@ -1,10 +1,7 @@
 # 6단계: 서비스
 
-> 상태: 🟡 진행 중 — [Two Sum](../../implementations/algorithm-track/two-sum/),
-> [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/),
-> [Valid Parentheses](../../implementations/algorithm-track/valid-parentheses/) 성능 확인,
-> [카탈로그 검색 CLI](../../implementations/project-track/catalog-search-cli/) Planguage
-> Goal 실측 완료(첫 프로젝트 트랙 사례)
+> 상태: 🟡 진행 중 — 5개 항목 성능 실측/Planguage Goal 실증 완료. 전체 목록은
+> [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
 
 완성된 구현을 실제로 사용 가능한 형태로 내보내는 단계. **2단계에서 정한 Planguage
 Goal을 실측하는 자리**이기도 합니다 — 정량화만 해놓고 실측을 안 하면 2단계 작업이
@@ -35,7 +32,7 @@ flowchart LR
 > **이 저장소의 한계**: 실제 LeetCode 제출은 이 세션에서 할 수 없습니다(계정/브라우저
 > 접근이 필요). "채점" 대신 **정확성은 5단계 테스트로, 성능은 아래 실측으로** 대체합니다.
 
-## 알고리즘 트랙 성능 실측 — Two Sum / Contains Duplicate / Valid Parentheses
+## 알고리즘 트랙 성능 실측
 
 각 구현 폴더의 `benchmark.py`로 제약조건 상한 근처에서 브루트포스 대비 최적화의
 실제 속도 차이를 측정했습니다.
@@ -45,11 +42,12 @@ flowchart LR
 | Two Sum (n=10,000, 정답이 배열 끝) | 1842.6 ms | 1.147 ms | 약 1600배 |
 | Contains Duplicate (n=100,000, 중복 없음) | (직접 측정 비현실적 — 추세로 추정 시 약 1~2분) | 5.94 ms | n=1000/2000/4000에서 9.2/37.5/151.5 ms로 4배씩 증가 확인(O(n²) 추세) |
 | Valid Parentheses (n=10,000, 완전 중첩) | 179.2 ms | 0.383 ms | 약 468배. n=1000~8000에서 4배씩 증가 확인 후 상한에서 측정 |
+| Contains Duplicate II (n=100,000, 중복 없음) | (직접 측정 비현실적 — 추세로 추정 시 1~2분) | 10.57 ms | n=500~4000에서 약 4배씩 증가 확인(O(n²) 추세) |
 
-Contains Duplicate는 브루트포스를 제약조건 상한(10^5)에서 직접 돌리면 약 5×10^9회
-비교가 필요해 비현실적이라, 작은 n에서 증가 추세만 확인하고 최적화 버전만 실제
-상한에서 측정했습니다. Valid Parentheses는 Two Sum의 교훈(주장한 "최악 케이스"가
-실제로는 아니었던 것)을 반영해, 상한 측정 전에 여러 크기에서 추세부터 확인했습니다.
+Contains Duplicate 계열은 브루트포스를 제약조건 상한(10^5)에서 직접 돌리면 비현실적이라,
+작은 n에서 증가 추세만 확인하고 최적화 버전만 실제 상한에서 측정했습니다.
+Valid Parentheses부터는 Two Sum의 교훈(주장한 "최악 케이스"가 실제로는 아니었던 것)을
+반영해, 상한 측정 전에 여러 크기에서 추세부터 확인하는 게 관행이 됐습니다.
 
 ## Planguage Goal 실측
 

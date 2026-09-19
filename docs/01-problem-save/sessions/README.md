@@ -28,6 +28,7 @@ docs/01-problem-save/sessions/<트랙파일명(확장자 제외)>/<YYYY-MM-DD>-<
 | Contains Duplicate | 알고리즘 | Xpress | 해시맵 원패스 탐색 | 1→7 완주 | 6개 | [보기](algorithm-track/2026-09-17-contains-duplicate.md) |
 | Valid Parentheses | 알고리즘 | Xpress | 스택 기반 매칭 (신규) | 1→7 완주 | 7개 | [보기](algorithm-track/2026-09-19-valid-parentheses.md) |
 | 카탈로그 검색 CLI | 프로젝트 | Full | Layered (ADR-0002) | 1→7 완주 | 6개 | [보기](project-track/2026-09-19-catalog-search-cli.md) |
+| Contains Duplicate II | 알고리즘 | Xpress | 해시맵 원패스 탐색 (3번째 재사용) | 1→7 완주 | 7개 | [보기](algorithm-track/2026-09-19-contains-duplicate-ii.md) |
 
 전체 테스트를 한 번에 돌리려면: `python3 implementations/run_all_tests.py`
 
