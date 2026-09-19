@@ -85,12 +85,12 @@ docs/
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
 | 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | 🟡 진행 중 | Two Sum·Contains Duplicate·카탈로그 검색 CLI에 이어, Valid Parentheses를 스택 기반 O(n)으로 구현(4개 구현 24개 테스트 전체 통과). [`implementations/`](../../implementations/), [`docs/05-implementation/`](../05-implementation/README.md) |
-| 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 성능 실측 + 카탈로그 검색 CLI로 **Planguage Goal 실측 규칙 첫 실증**(0.5초 목표 대비 34ms). [`docs/06-service/`](../06-service/README.md) |
-| 7. 유지보수 | 🟡 진행 중 | 세 항목 모두 회고 완료 → `catalog/checklist.md`에 4개 항목 추가, `catalog/patterns.md`에 첫 프로젝트 트랙 패턴 등록. [`docs/07-maintenance/`](../07-maintenance/README.md) |
+| 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 3건 성능 실측(Valid Parentheses는 지난 교훈대로 추세부터 검증한 진짜 최악 케이스, 468배) + 카탈로그 검색 CLI Planguage Goal 실증. [`docs/06-service/`](../06-service/README.md) |
+| 7. 유지보수 | 🟡 진행 중 | 세 항목 회고 완료 → `catalog/checklist.md`에 4개 항목 추가, `catalog/patterns.md`에 첫 프로젝트 트랙 패턴 등록. [`docs/07-maintenance/`](../07-maintenance/README.md) |
 
-**다음 액션**: [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)를
-6단계(성능 실측)로 진행 후 7단계 회고 — 이때 "스택 기반 매칭"이 카탈로그의
-두 번째 구현 기법 패턴으로 등록될 예정(현재는 해시맵 원패스 탐색뿐).
+**다음 액션**: [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)
+7단계 회고 — 이때 "스택 기반 매칭"이 카탈로그의 두 번째 구현 기법 패턴으로
+등록될 예정(현재는 해시맵 원패스 탐색뿐).
 
 ## 유즈케이스
 
