@@ -18,4 +18,28 @@
 | 3 → 4 | Go | `catalog/patterns.md`를 "해시" 키워드로 검색 → Two Sum 회고에서 등록된 "해시맵 원패스 탐색" 패턴을 실제로 찾아 재사용 ([핵심 피드백 루프 실증](../../../00-overview/worklog.md#핵심-피드백-루프-실증)) |
 | 4 → 5 | Go | [`implementations/algorithm-track/contains-duplicate/`](../../../../implementations/algorithm-track/contains-duplicate/)에 TDD Red-Green-Refactor로 구현 완료 — Red(테스트 먼저) → Green(브루트포스 O(n²)) → Refactor(해시셋 O(n)으로 최적화, 6개 테스트 재통과). Xpress 등급이라 경계값 분석(길이 하한 1, 배열 양끝 중복, 음수)과 브루트포스 대비 차등 테스트(200회)로 커버 |
 | 5 → 6 | Go | 알고리즘 트랙 DoD(제출/채점+성능)를 [`benchmark.py`](../../../../implementations/algorithm-track/contains-duplicate/benchmark.py)로 대체 측정: 최적화(해시셋) n=100,000(제약조건 상한, 중복 없음)에서 5.94ms. 브루트포스는 상한에서 실행이 비현실적(추세 추정 약 1~2분)이라 n=1000/2000/4000에서 9.2/37.5/151.5ms로 O(n²) 증가 추세만 확인. 정확성은 5단계 테스트로 갈음, 실제 LeetCode 제출은 세션 한계로 생략 |
-| 6 → 7 | (대기) | 7단계 회고 전 |
+| 6 → 7 | Go | 아래 회고 작성 완료 |
+
+## 회고
+
+날짜: 2026-09-19
+문제/프로젝트: Contains Duplicate (Two Sum과 같은 시기에 함께 진행)
+
+잘된 점: `catalog/patterns.md`의 "해시맵 원패스 탐색" 패턴이 해시셋 변형으로도
+그대로 재사용됐다 — 패턴이 Two Sum 전용이 아니라 실제로 일반화된다는 두 번째
+증거.
+
+어려웠던 점: Two Sum의 6단계 벤치마크를 만들면서 발견한 것과 같은 문제를
+피하려고, 이 문제의 벤치마크(`n=1000/2000/4000`에서 O(n²) 추세 확인)는
+실행 결과 숫자를 직접 보고서야 확정했다. 별도로, gates.md의 5·6단계 DoD가
+Full 등급을 전제로 쓰여 있어서 이 문제(Xpress)가 원칙적으로는 통과할 수 없는
+기준이었다는 것도 이때 같이 발견했다.
+  → 5 Whys(두 번째 문제): [Two Sum 회고](2026-09-17-two-sum.md#회고) 참고 —
+    근본원인은 "규정을 한 곳만 고치고 전체를 안 훑음"
+
+새로 배운 패턴: 없음
+
+놓쳤던 체크리스트 항목: [`catalog/checklist.md`](../../../catalog/checklist.md)의
+"저장소 정합성 체크리스트" — 규정 문서를 한 항목만 고치고 넘어가지 않도록 하는
+항목 추가. 이 항목은 실제로 [gates.md 수정](../../../00-overview/gates.md)으로
+바로 이어졌다.

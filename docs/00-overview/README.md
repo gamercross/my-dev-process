@@ -86,9 +86,11 @@ docs/
 | 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | 🟡 진행 중 | Two Sum·Contains Duplicate를 TDD Red-Green-Refactor로 구현 완료 (둘 다 브루트포스→해시맵/해시셋 최적화). [`implementations/`](../../implementations/), [`docs/05-implementation/`](../05-implementation/README.md) |
 | 6. 서비스 | 🟡 진행 중 | Two Sum·Contains Duplicate 성능 실측 완료(브루트포스 대비 최대 1600배). 실제 LeetCode 제출은 세션 한계로 생략. [`docs/06-service/`](../06-service/README.md) |
-| 7. 유지보수 | ⬜ 미착수 | [`docs/07-maintenance/`](../07-maintenance/README.md) |
+| 7. 유지보수 | 🟡 진행 중 | Two Sum·Contains Duplicate 회고 완료 → `catalog/checklist.md`에 2개 항목 추가(6단계 벤치마크 검증, 저장소 정합성 훑기). [`docs/07-maintenance/`](../07-maintenance/README.md) |
 
-**다음 액션**: 7단계 — Two Sum·Contains Duplicate 회고 작성.
+**다음 액션**: 두 문제 모두 게이트 1→7 완주(Xpress 등급 기준). 세 번째 알고리즘
+문제로 핵심 루프를 한 번 더 검증하거나, 프로젝트 트랙(Full 등급)으로 처음부터
+끝까지 한 바퀴 돌려보기.
 
 ## 유즈케이스
 
