@@ -26,10 +26,17 @@ flowchart LR
 1단계 `sessions/`와 같은 이름 규칙입니다.
 
 ```
-implementations/<트랙파일명>/<세션 슬러그>/
-  solution.py         # 구현 (알고리즘 트랙: 브루트포스 + 최적화 버전 둘 다 남김)
-  test_solution.py     # 단위 테스트 + 경계값/차등 테스트
+implementations/
+  run_all_tests.py       # 모든 항목의 test_solution.py를 한 번에 실행
+  <트랙파일명>/<세션 슬러그>/
+    solution.py           # 구현 (알고리즘 트랙: 브루트포스 + 최적화 버전 둘 다 남김)
+    test_solution.py       # 단위 테스트 + 경계값/차등 테스트
+    benchmark.py            # (6단계) 성능 실측, 선택
 ```
+
+새 항목을 추가한 뒤나, 다른 항목을 건드린 뒤에는 `python3 implementations/run_all_tests.py`로
+전체가 여전히 통과하는지 한 번에 확인합니다 — 항목이 늘어날수록 하나씩 따로
+돌려보는 게 비현실적이라 이 스크립트를 별도로 둡니다.
 
 ## 이 단계에서 하는 일
 
