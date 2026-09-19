@@ -28,6 +28,11 @@ flowchart LR
 3. 단계를 넘어갈 때마다 → [docs/00-overview/gates.md](docs/00-overview/gates.md)의
    DoR/DoD로 확인
 
+**지금까지 진행한 모든 문제/프로젝트를 한눈에 보려면 →
+[docs/01-problem-save/sessions/README.md](docs/01-problem-save/sessions/README.md)**
+(트래커 표: 문제별 트랙/등급/패턴/게이트 상태/테스트 개수). 전체 테스트를 한 번에
+돌리려면 `python3 implementations/run_all_tests.py`.
+
 ## 단계 안내
 
 | 단계 | 하는 일 | 핵심 개념 |
