@@ -151,3 +151,27 @@ EARS 요구사항 전부 커버")와 6단계 DoD("2단계 Planguage Goal 실측"
 등록. 이걸로 Xpress 등급 알고리즘 문제 두 건이 1단계부터 7단계까지 완전히
 한 바퀴 돈 첫 사례가 됨 — 다음은 세 번째 알고리즘 문제로 루프를 더 검증하거나,
 Full 등급 프로젝트 트랙으로 처음부터 끝까지 돌려보는 것.
+
+### 첫 Full 등급 프로젝트 트랙 완주 — 카탈로그 검색 CLI
+지금까지 Full 등급 규칙(PRD, 2단계 5단계 파이프라인, ADR, Walking Skeleton,
+Planguage Goal 실측)은 이 워크플로우 시스템 자체를 만들 때만 쓰였고, 실제로
+"새 항목"에 처음부터 끝까지 적용해본 적이 없었다. 카탈로그 검색 CLI(원래
+FR2 "패턴 검색"이 지금까지 Claude가 grep하는 방식으로만 존재하던 걸 실제
+코드로 채움)를 골라 1→7 전체를 돌림:
+
+- 1단계: PRD 경량형까지 채워서 gates.md의 PRD/DoD 분기를 처음 실사용
+- 2단계: EARS 4개, Planguage 2개, MoSCoW×Kano, RTM은 4개(5개 미만)라 생략
+  규칙대로 스킵
+- 3단계: 후보가 사실상 1개(Layered)라 ATAM 생략, [ADR-0002](../03-pattern-analysis/adr/0002-catalog-search-cli-architecture.md)를
+  Nygard 대신 **MADR 최소 템플릿**으로 처음 실사용
+- 4~5단계: Walking Skeleton → TDD로 FR1~FR4 구현. 이 과정에서 **테스트
+  자체의 버그**(FR3 충족기준을 "출력이 완전히 같아야 한다"로 잘못 해석)를
+  발견, `implementations/run_all_tests.py`가 `test_solution.py`만 찾던 것도
+  `test_*.py`로 일반화
+- 6단계: Twelve-Factor 적용, **이 저장소 최초로 실제 Planguage Goal 측정**
+  (Usability 34ms/500ms 목표, Supportability 0개 외부 패키지)
+- 7단계: 회고 2건(Two Sum·Contains Duplicate) + 1건(이 프로젝트) 합쳐
+  `checklist.md`에 총 4개 항목, `patterns.md`에 첫 프로젝트 트랙 패턴
+  ("환경변수 기반 Config 오버라이드") 등록
+
+Xpress 알고리즘 2건 + Full 프로젝트 1건, 총 세 항목이 1→7을 완주함.
