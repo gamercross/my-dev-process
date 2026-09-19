@@ -21,4 +21,22 @@ def valid_parentheses_bruteforce(s: str) -> bool:
     return s == ""
 
 
-valid_parentheses = valid_parentheses_bruteforce
+def valid_parentheses(s: str) -> bool:
+    """Refactor(알고리즘 트랙: 최적화) 단계 — 스택 기반 매칭. O(n) 시간,
+    O(n) 공간. 여는 괄호를 스택에 쌓고, 닫는 괄호가 나오면 스택 맨 위와
+    짝이 맞는지 한 번만 확인한다.
+
+    빠른 실패: 길이가 홀수면 무조건 무효이므로 스택을 만들 필요도 없다
+    (동등분할 — 홀수 길이는 항상 False인 클래스)."""
+    if len(s) % 2 != 0:
+        return False
+
+    closing_to_opening = {")": "(", "]": "[", "}": "{"}
+    stack = []
+    for ch in s:
+        if ch in closing_to_opening:
+            if not stack or stack.pop() != closing_to_opening[ch]:
+                return False
+        else:
+            stack.append(ch)
+    return not stack
