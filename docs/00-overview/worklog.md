@@ -117,3 +117,11 @@ Code 세션을 열어 직접 트리거해봐야 함.
 유지. Xpress 등급이라 2단계 EARS 명세가 없어서, 대신 경계값 분석(배열 길이 하한,
 양끝 인덱스, 음수)과 브루트포스 대비 차등 테스트로 엣지 케이스를 커버함 — 5단계
 README의 "Xpress/Lite 등급" 절로 이 대체 규칙을 명문화.
+
+### Contains Duplicate도 같은 방식으로 진행
+Two Sum과 완전히 같은 순서(Red→Green→Refactor, 경계값+차등 테스트)로
+`implementations/algorithm-track/contains-duplicate/`를 구현. 최적화는 해시맵이
+아니라 해시셋 변형이지만 근본 아이디어(한 번 순회하며 지금까지 본 값을 저장)는
+동일. 이걸로 `catalog/patterns.md`의 "해시맵 원패스 탐색" 패턴이 Two Sum 전용이
+아니라 실제로 여러 문제에 재사용 가능한 일반 패턴이라는 게 두 번째로 확인됨
+(첫 확인은 패턴 검색 단계, 이번엔 실제 구현 단계에서).

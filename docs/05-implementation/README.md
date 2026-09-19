@@ -1,6 +1,7 @@
 # 5단계: 구현
 
-> 상태: 🟡 진행 중 — 첫 사례([Two Sum](../../implementations/algorithm-track/two-sum/)) 완료
+> 상태: 🟡 진행 중 — [Two Sum](../../implementations/algorithm-track/two-sum/),
+> [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/) 완료
 
 패턴 스켈레톤을 실제 문제/요구사항에 맞게 완성하는 단계.
 
@@ -38,18 +39,17 @@ implementations/<트랙파일명>/<세션 슬러그>/
   동등분할/경계값 분석만으로 엣지 케이스를 뽑고 브루트포스 대비 차등 테스트로 보강
 - 완료 후 [6단계](../06-service/README.md)로 전달
 
-## 실제 사례 — Two Sum
+## 실제 사례
 
-[`implementations/algorithm-track/two-sum/`](../../implementations/algorithm-track/two-sum/)에서
-실제로 진행함:
+두 문제 모두 같은 순서(Red → Green → Refactor)로 진행했고, 2단계를 생략한 Xpress
+등급이라 경계값 분석 + 브루트포스 대비 차등 테스트로 엣지 케이스를 대신했습니다.
 
-| 단계 | 한 일 |
-|---|---|
-| Red | `test_solution.py`를 먼저 작성 → `solution.py`가 없어 `ModuleNotFoundError`로 실패 확인 |
-| Green | 브루트포스(O(n²))만 작성 → 5개 테스트 전부 통과 |
-| Refactor(최적화) | [해시맵 원패스 탐색](../catalog/patterns.md) 패턴으로 O(n) 구현으로 교체 → 5개 테스트 재통과 |
+| 문제 | 코드 | Refactor(최적화) | 테스트 |
+|---|---|---|---|
+| [Two Sum](../../implementations/algorithm-track/two-sum/) | O(n²) → O(n) | [해시맵 원패스 탐색](../catalog/patterns.md) | 5개 (길이 하한, 정답이 양끝, 음수, 차등 테스트 200회) |
+| [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/) | O(n²) → O(n) | 같은 패턴의 해시셋 변형 | 6개 (길이 하한 1, 중복이 양끝, 음수, 차등 테스트 200회) |
 
-테스트 구성(2단계를 생략한 Xpress 등급이라 경계값 분석으로 대체):
-- 예제 케이스, 배열 길이 하한(2개) 경계, 정답이 배열 양끝일 때, 음수 포함
-- 브루트포스를 정답 오라클로 둔 차등 테스트(무작위 200회) — 최적화 버전이 항상
-  유효한 정답을 내는지 확인
+**Contains Duplicate가 확인해준 것**: `catalog/patterns.md`의 패턴이 "Two Sum
+전용"이 아니라 정말로 재사용 가능한 일반 패턴이라는 것 — 완전히 다른 문제에 같은
+설명("배열을 한 번 순회하며 지금까지 본 값을 저장, O(1) 확인")을 그대로 적용해서
+풀렸습니다.
