@@ -58,4 +58,6 @@ docs/
   06-service/                  6단계 방법론
   07-maintenance/              7단계 방법론
   catalog/                     patterns.md + checklist.md — 7단계 회고에서 계속 누적
+implementations/                5단계 실제 코드 — <트랙파일명>/<세션 슬러그>/ 구조,
+                                sessions/와 같은 이름 규칙
 ```
