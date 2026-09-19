@@ -33,8 +33,8 @@
 | 2. 문제 분석 | 1단계 항목 저장 완료 | [`catalog/checklist.md`](../catalog/checklist.md)의 "2단계 파이프라인 체크리스트" 4개 항목 모두 체크 |
 | 3. 패턴 분석 | 2단계 요구사항 확정 | [`catalog/checklist.md`](../catalog/checklist.md)의 "3단계 파이프라인 체크리스트" 4개 항목 모두 체크 |
 | 4. 패턴 구현 | 3단계 결정(패턴/ADR) 확정 | [Walking Skeleton](../04-pattern-implementation/02-project-track-skeleton.md) 기준으로 주요 컴포넌트가 실제로 연결됨(스모크 테스트 통과) — 또는 알고리즘 트랙은 브루트포스가 정답을 냄 |
-| 5. 구현 | 4단계 스켈레톤 검증 완료 | 단위 테스트 통과, 2단계 EARS Unwanted-behavior(엣지 케이스) 요구사항 전부 커버 |
-| 6. 서비스 | 5단계 구현·테스트 통과 | 2단계 Planguage Goal을 실측해서 달성 여부가 기록됨 (미달이어도 "기록됨"이면 조건 충족 — 미달 자체가 7단계 입력이 됨) |
+| 5. 구현 | 4단계 스켈레톤 검증 완료 | 단위 테스트 통과. **Full 등급(2단계 수행함)**: EARS Unwanted-behavior 요구사항 전부 커버. **Xpress/Lite(2단계 Skip)**: [동등분할·경계값 분석](../05-implementation/02-boundary-value-equivalence.md) + 브루트포스 대비 차등 테스트로 대체 |
+| 6. 서비스 | 5단계 구현·테스트 통과 | **프로젝트 트랙**: 2단계 Planguage Goal을 실측해서 달성 여부가 기록됨 (미달이어도 "기록됨"이면 조건 충족 — 미달 자체가 7단계 입력이 됨). **알고리즘 트랙**: 제출/채점 결과 + 성능(런타임/메모리)이 기록됨 |
 | 7. 유지보수 | 6단계 실측 완료 | 회고 작성 + 5 Whys로 근본원인 도달 + `catalog/patterns.md` 또는 `checklist.md` 갱신 + git 커밋 |
 
 DoD 열은 앞 단계가 이미 만들어둔 체크리스트를 그대로 가리킵니다 — **게이트 규정은
