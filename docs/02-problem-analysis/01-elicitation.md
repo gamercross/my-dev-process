@@ -13,7 +13,7 @@ Interview, Observation, Prototyping, Requirements Workshop, Survey/Questionnaire
 | 기법 | 언제 쓰는가 | 개인 워크플로우 적용 |
 |---|---|---|
 | Document Analysis (문서 분석) | 기존 자료(이슈, 이전 코드, 레퍼런스 문서)가 있을 때 | 1단계 문제 저장 항목, 과거 `catalog/` 참고 |
-| Interview (인터뷰) | 이해관계자가 있을 때 | 실무 프로젝트에서 요청자/사용자와 대화 |
+| Interview (인터뷰) | 이해관계자가 있을 때 | 1단계 필드를 채울 때부터 AI가 능동적으로 되묻는다 — 구체적 질문 목록은 [01-problem-save/README.md](../01-problem-save/README.md)의 "필드는 어떻게 채우는가" 절 참고 |
 | Observation (관찰) | 실제 사용 흐름을 봐야 할 때 | 기존 시스템/코드가 실제로 어떻게 쓰이는지 관찰 |
 | Prototyping (프로토타이핑) | 요구사항이 모호할 때 | 최소 스켈레톤을 먼저 만들어보고 요구사항을 역으로 발견 (4단계와 연결) |
 | Brainstorming | 초기 아이디어 발산 | 문제를 처음 만났을 때 후보 해석 여러 개 나열 |

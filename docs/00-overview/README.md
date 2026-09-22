@@ -80,7 +80,7 @@ docs/
 | 단계 | 상태 | 상세 |
 |---|---|---|
 | 0. 원문제 정의 | ✅ 완료 | 위 참조 |
-| 1. 문제 저장 | ✅ 완료 | [`docs/01-problem-save/`](../01-problem-save/README.md) — 세 번째 트랙(`learning-track.md`) 추가로 ADR-0001의 "새 트랙 추가 시 스킬 로직 무변경" Supportability 제약을 실측 검증(2026-09-22, 아래 "다음 액션" 참고) |
+| 1. 문제 저장 | ✅ 완료 | [`docs/01-problem-save/`](../01-problem-save/README.md) — 세 번째 트랙(`learning-track.md`) 추가로 ADR-0001의 Supportability 제약을 실측 검증. 2026-09-22, 필드 채우기를 일방적 받아쓰기에서 Gause & Weinberg 컨텍스트-프리 질문 기반 인터뷰 방식으로 전환(아래 "다음 액션" 참고) |
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. 두 번째 Full 프로젝트에서 ADR-0003(Microkernel)으로 이 저장소 최초의 ATAM 실사용. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
 | 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
@@ -96,8 +96,15 @@ docs/
 기준. 트래커/진행상황 표처럼 항목을 저장할 때마다 갱신하는 기록용 파일은
 트랙 신규 여부와 무관하게 매번 바뀌므로 이 Goal의 "기존 파일" 범위에서
 제외 — 이 구분 자체가 이번에 명확해진 것). 같은 김에 Lite 등급도 처음
-실사용함. 다음은 Full 등급의 상세형 PRD(Atlassian 스타일)나 즉시처리(2분
-규칙) 실증처럼, 아직 안 밟아본 나머지 등급/경로를 확인하는 방향.
+실사용함. 즉시처리(GTD Two-Minute Rule)도 SKILL.md 배너의 스테일 숫자를
+그 자리에서 바로 고치며 실측(19초) — 이걸로 scope-tiers.md 네 등급이 전부
+실사용으로 확인됨.
+
+사용자 요청으로 명령 1(문제 저장)의 필드 채우기 방식을 바꿨다 —
+사용자가 준 설명을 그대로 받아 적는 대신, Gause & Weinberg의 컨텍스트-프리
+질문으로 되물어서 채운다([`docs/01-problem-save/`](../01-problem-save/README.md)의
+"필드는 어떻게 채우는가" 절). 아직 실전 항목으로 검증되지는 않았다 — 다음
+항목(특히 Full 등급 프로젝트)을 저장할 때가 검증 시점.
 
 ## 유즈케이스
 
