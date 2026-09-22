@@ -65,6 +65,9 @@
 - 예시 문제/사례:
   - [카탈로그 검색 CLI](../01-problem-save/sessions/project-track/2026-09-19-catalog-search-cli.md) —
     `CATALOG_ROOT` 환경변수로 검색 대상 저장소를 바꿀 수 있게 함(FR4)
+  - [진행상황 대시보드 생성기](../01-problem-save/sessions/project-track/2026-09-22-progress-dashboard-generator.md) —
+    `REPORT_OUTPUT` 환경변수로 출력을 표준출력 대신 파일로 바꿀 수 있게 함(FR5).
+    프로젝트 트랙 패턴이 처음으로 재사용된 사례(2026-09-22)
 - 처음 배운 날짜/출처: 2026-09-19, 카탈로그 검색 CLI 회고 (이 저장소의 첫
   프로젝트 트랙 패턴 등록)
 

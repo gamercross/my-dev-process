@@ -64,6 +64,7 @@ Michael Nygard가 2011년에 제안한 개념으로, **하나의 아키텍처적
 |---|---|---|
 | [0001](0001-storage-and-interface.md) | 워크플로우 인터페이스를 파일+Claude Code 스킬 하이브리드로 결정 | Accepted |
 | [0002](0002-catalog-search-cli-architecture.md) | 카탈로그 검색 CLI를 단일 파일 계층형 스크립트로 구현 (MADR) | Accepted |
+| [0003](0003-progress-dashboard-architecture.md) | 진행상황 대시보드 생성기를 마이크로커널(플러그인 수집기) 구조로 구현 (MADR + ATAM) | Accepted |
 
 ## 출처
 - Nygard, M., *Documenting Architecture Decisions* (2011) — [템플릿 정리](https://github.com/joelparkerhenderson/architecture-decision-record/blob/main/locales/en/templates/decision-record-template-by-michael-nygard/index.md)

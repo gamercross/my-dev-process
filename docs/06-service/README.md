@@ -1,6 +1,6 @@
 # 6단계: 서비스
 
-> 상태: 🟡 진행 중 — 6개 항목 성능 실측/Planguage Goal 실증 완료. 전체 목록은
+> 상태: 🟡 진행 중 — 7개 항목 성능 실측/Planguage Goal 실증 완료. 전체 목록은
 > [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
 
 완성된 구현을 실제로 사용 가능한 형태로 내보내는 단계. **2단계에서 정한 Planguage
@@ -76,3 +76,17 @@ Valid Parentheses부터는 Two Sum의 교훈(주장한 "최악 케이스"가 실
 Twelve-Factor App 중 실제로 적용된 것: Config(`CATALOG_ROOT` 환경변수),
 Backing Services(카탈로그 경로를 붙였다 뗄 수 있는 자원으로 취급), Processes
 (무상태), Logs(표준출력).
+
+## 프로젝트 트랙 실제 사례 — 진행상황 대시보드 생성기
+
+두 번째 프로젝트 트랙 사례. [진행상황 대시보드 생성기](../../implementations/project-track/progress-dashboard-generator/)로
+Planguage Goal 실측이 처음으로 **재현**됨을 확인했습니다.
+
+| Goal | 목표 | 실측 |
+|---|---|---|
+| Usability: 리포트 생성 시간(테스트 실행 포함) | 2초 이내(Stretch 0.5초) | 101.1 ms — Stretch까지 달성 |
+| Supportability: 외부 패키지 수 | 0개 | 0개(표준 라이브러리만) |
+| Supportability: 새 수집기 추가 시 기존 파일 수정 수 | 0개 | 아직 실측 안 됨(다음 수집기 추가 시 측정) |
+
+Twelve-Factor App 중 실제로 적용된 것: Config(`REPORT_OUTPUT` 환경변수),
+Processes(무상태), Logs(표준출력).
