@@ -42,11 +42,25 @@ Stretch: 3분 이내
 ### Supportability — "새 트랙 추가 시 기존 구조 무변경으로 확장 가능"
 
 ```
-Scale: 새 트랙 추가 시 수정해야 하는 기존 파일 수(개)
-Meter: git diff로 새 트랙 추가 커밋에서 변경된 기존 파일 수를 센다
-Goal: 0개 (신규 파일만 추가)
+Scale: 새 트랙 추가 시 수정해야 하는 기존 "핵심 로직" 파일 수(개) —
+  .claude/skills/dev-workflow/SKILL.md와 implementations/ 아래 코드만
+  해당. 트래커(sessions/README.md)·진행상황 표·worklog.md처럼 새 항목을
+  저장할 때마다(트랙이 새로운지와 무관하게) 매번 갱신하는 기록용 파일은
+  제외한다.
+Meter: git diff --stat으로 새 트랙 추가 커밋에서 변경된 파일을 세고, 위
+  기준으로 핵심 로직/기록용을 분류한다.
+Goal: 핵심 로직 파일 0개 (신규 파일만 추가)
 Stretch: 해당 없음 (0이 이미 최선)
 ```
+
+> **실측(2026-09-22, 세 번째 트랙 `learning-track.md` 추가)**: 핵심 로직
+> 파일(SKILL.md, `implementations/` 코드) **0개 수정** — Goal 달성.
+> `docs/01-problem-save/sessions/README.md`(트래커) 등 기록용 파일은
+> 예정대로 수정됨(신규 트랙 여부와 무관한 정상 동작). 위 "핵심 로직 파일만
+> 센다"는 구분 자체가 이번 실측 과정에서 명확해졌다 — 원래 Scale은
+> "기존 파일 수"라고만 적혀 있어서 기록용 파일까지 포함하면 이 Goal은
+> 애초에 달성 불가능했다(항목을 저장할 때마다 트래커가 바뀌므로). 자세한
+> 경위는 [worklog.md](../00-overview/worklog.md)의 2026-09-22 항목 참고.
 
 ### Reliability — "저장 데이터 유실 방지"
 

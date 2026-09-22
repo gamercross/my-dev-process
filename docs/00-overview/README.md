@@ -80,20 +80,24 @@ docs/
 | 단계 | 상태 | 상세 |
 |---|---|---|
 | 0. 원문제 정의 | ✅ 완료 | 위 참조 |
-| 1. 문제 저장 | ✅ 완료 (초안) | [`docs/01-problem-save/`](../01-problem-save/README.md) |
+| 1. 문제 저장 | ✅ 완료 | [`docs/01-problem-save/`](../01-problem-save/README.md) — 세 번째 트랙(`learning-track.md`) 추가로 ADR-0001의 "새 트랙 추가 시 스킬 로직 무변경" Supportability 제약을 실측 검증(2026-09-22, 아래 "다음 액션" 참고) |
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. 두 번째 Full 프로젝트에서 ADR-0003(Microkernel)으로 이 저장소 최초의 ATAM 실사용. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
 | 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | 🟡 진행 중 | 일곱 항목 전체 TDD 구현 완료(7개 구현 48개 테스트 통과, [`implementations/`](../../implementations/) 참고). [`docs/05-implementation/`](../05-implementation/README.md) |
 | 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 5건 성능 실측 + 프로젝트 트랙 2건 Planguage Goal 실증. 벤치마크마다 추세로 최악 케이스 검증하는 습관 정착. [`docs/06-service/`](../06-service/README.md) |
-| 7. 유지보수 | 🟡 진행 중 | 일곱 항목 모두 회고 완료(1→7 완주) → `catalog/checklist.md` 6개 항목, `catalog/patterns.md`에 패턴 3개(해시맵 원패스 탐색 — 3회 재사용, 스택 기반 매칭, 한 번 순회 최솟값 추적) + 프로젝트 트랙 패턴 첫 재사용(환경변수 Config). [`docs/07-maintenance/`](../07-maintenance/README.md) |
+| 7. 유지보수 | 🟡 진행 중 | 여덟 항목 모두 회고 완료(1→7 완주) → `catalog/checklist.md` 6개 항목, `catalog/patterns.md`에 패턴 3개(해시맵 원패스 탐색 — 3회 재사용, 스택 기반 매칭, 한 번 순회 최솟값 추적) + 프로젝트 트랙 패턴 첫 재사용(환경변수 Config). [`docs/07-maintenance/`](../07-maintenance/README.md) |
 
-**다음 액션**: Xpress 알고리즘 5건 + Full 프로젝트 2건, 총 7개 항목이 1→7을
-완주함(전체 목록: [sessions/README.md](../01-problem-save/sessions/README.md)
-트래커). 두 번째 Full 프로젝트(진행상황 대시보드 생성기)에서 프로젝트 트랙
-전체 파이프라인(PRD·RTM·ATAM·ADR)이 처음으로 재현됐고, 첫 프로젝트와 다른
-아키텍처(Microkernel)를 실제로 선택함을 확인. 다음은 새 트랙을
-추가해서 확장성 규칙을 실증.
+**다음 액션**: Xpress 알고리즘 5건 + Full 프로젝트 2건 + Lite 학습 1건, 총
+8개 항목이 1→7을 완주함(전체 목록: [sessions/README.md](../01-problem-save/sessions/README.md)
+트래커). 세 번째 트랙(학습 트랙) 추가로 ADR-0001의 Supportability 제약을
+실측: `.claude/skills/dev-workflow/SKILL.md`·모든 코드(`implementations/`)
+**0개 수정**, `learning-track.md` 등 신규 파일만 추가로 확장됨(핵심 로직
+기준. 트래커/진행상황 표처럼 항목을 저장할 때마다 갱신하는 기록용 파일은
+트랙 신규 여부와 무관하게 매번 바뀌므로 이 Goal의 "기존 파일" 범위에서
+제외 — 이 구분 자체가 이번에 명확해진 것). 같은 김에 Lite 등급도 처음
+실사용함. 다음은 Full 등급의 상세형 PRD(Atlassian 스타일)나 즉시처리(2분
+규칙) 실증처럼, 아직 안 밟아본 나머지 등급/경로를 확인하는 방향.
 
 ## 유즈케이스
 

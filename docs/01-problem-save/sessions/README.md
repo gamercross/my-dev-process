@@ -31,6 +31,7 @@ docs/01-problem-save/sessions/<트랙파일명(확장자 제외)>/<YYYY-MM-DD>-<
 | Contains Duplicate II | 알고리즘 | Xpress | 해시맵 원패스 탐색 (3번째 재사용) | 1→7 완주 | 7개 | [보기](algorithm-track/2026-09-19-contains-duplicate-ii.md) |
 | Best Time to Buy and Sell Stock | 알고리즘 | Xpress | 한 번 순회 최솟값 추적 (신규, 그리디) | 1→7 완주 | 7개 | [보기](algorithm-track/2026-09-22-best-time-to-buy-and-sell-stock.md) |
 | 진행상황 대시보드 생성기 | 프로젝트 | Full | Microkernel (ADR-0003) + 환경변수 기반 Config 오버라이드 (재사용) | 1→7 완주 | 10개 | [보기](project-track/2026-09-22-progress-dashboard-generator.md) |
+| Conventional Commits | 학습 | Lite | - | 1→7 완주 | - | [보기](learning-track/2026-09-22-conventional-commits.md) |
 
 전체 테스트를 한 번에 돌리려면: `python3 implementations/run_all_tests.py`
 

@@ -1,6 +1,7 @@
 # 6단계: 서비스
 
-> 상태: 🟡 진행 중 — 7개 항목 성능 실측/Planguage Goal 실증 완료. 전체 목록은
+> 상태: 🟡 진행 중 — 7개 항목 성능 실측/Planguage Goal 실증 완료(Lite 등급
+> 학습 트랙 1건은 6단계 자체가 생략 대상이라 해당 없음). 전체 목록은
 > [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
 
 완성된 구현을 실제로 사용 가능한 형태로 내보내는 단계. **2단계에서 정한 Planguage

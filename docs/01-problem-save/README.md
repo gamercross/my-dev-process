@@ -9,9 +9,11 @@ flowchart LR
     A[새 문제/프로젝트] --> B{트랙?}
     B -->|알고리즘| C[algorithm-track.md]
     B -->|프로젝트| D[project-track.md]
+    B -->|학습| H[learning-track.md]
     D -.Full 등급이면.-> E[+ prd-template.md]
     C --> F[sessions/에 저장]
     D --> F
+    H --> F
     E --> F
     F --> G[게이트 로그 시작]
 ```
@@ -20,7 +22,13 @@ flowchart LR
 |---|---|---|
 | [algorithm-track.md](algorithm-track.md) | 알고리즘 문제풀이 | ICPC 문제 명세 규격 |
 | [project-track.md](project-track.md) | 실무/사이드 프로젝트 | GitHub Issue Template 규격 |
+| [learning-track.md](learning-track.md) | 새로운 개념/기술 학습 기록 | Feynman Technique |
 | [prd-template.md](prd-template.md) | Full 등급 프로젝트 트랙 전용 확장판 | Google/Atlassian PRD |
+
+`learning-track.md`는 이 시스템의 세 번째 트랙으로, ADR-0001의 Supportability
+제약("새 트랙 추가 시 스킬 로직 무변경")을 실제로 검증하려고 추가했습니다 —
+`.claude/skills/dev-workflow/SKILL.md`는 한 줄도 안 고쳤습니다(자세한 건
+[worklog.md](../00-overview/worklog.md) 참고).
 
 PRD를 언제 쓰는지는 [scope-tiers.md](../00-overview/scope-tiers.md) 등급으로 정합니다.
 
