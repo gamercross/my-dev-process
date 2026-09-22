@@ -87,7 +87,8 @@ DoD 열은 앞 단계가 이미 만들어둔 체크리스트를 그대로 가리
 | 2 → 3 | Go | 5단계 파이프라인 체크리스트 충족, [applied-example.md](../02-problem-analysis/applied-example.md) 참고 |
 | 3 → 4 | Go | [ADR-0001](../03-pattern-analysis/adr/0001-storage-and-interface.md) Accepted |
 | 4 → 5 | Go | 트랙 자동 인식 스모크 테스트 통과 ([04단계 README](../04-pattern-implementation/README.md)) |
-| 5 → 6 | (대기) | 5단계 미착수 |
+| 5 → 6 | Go | 5·6·7단계 방법론(TDD, Twelve-Factor, 5 Whys+Blameless) 전부 문서화 + 여러 실제 항목으로 검증 완료 |
+| 6 → 7 | Go | 위와 동일 — 알고리즘 5건 + 프로젝트 2건 + 학습 1건이 실제로 6단계를 통과함 ([트래커](../01-problem-save/sessions/README.md)) |
 
 ## 실제 사용 예시 — Two Sum / Contains Duplicate
 
