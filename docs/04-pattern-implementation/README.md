@@ -34,8 +34,9 @@ flowchart TD
   자라날 골격입니다.
 - [`docs/01-problem-save/sessions/`](../01-problem-save/sessions/README.md) — 1단계
   세션 폴더 구조.
-- 트랙 자동 인식 로직과 명령 1·2 절차는 Two Sum/Contains Duplicate로 실제 검증했습니다
-  (과정은 [worklog.md](../00-overview/worklog.md) 참고).
+
+첫 몇 개 항목을 이 스켈레톤으로 실제로 저장해보면서 트랙 자동 인식·명령
+1·2 절차가 실전에서도 매끄러운지 검증하는 게 다음 순서입니다.
 
 ## 아직 검증 안 된 것 (5단계로 넘김)
 

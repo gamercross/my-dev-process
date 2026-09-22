@@ -87,16 +87,12 @@ DoD 열은 앞 단계가 이미 만들어둔 체크리스트를 그대로 가리
 | 2 → 3 | Go | 5단계 파이프라인 체크리스트 충족, [applied-example.md](../02-problem-analysis/applied-example.md) 참고 |
 | 3 → 4 | Go | [ADR-0001](../03-pattern-analysis/adr/0001-storage-and-interface.md) Accepted |
 | 4 → 5 | Go | 트랙 자동 인식 스모크 테스트 통과 ([04단계 README](../04-pattern-implementation/README.md)) |
-| 5 → 6 | (대기) | 5단계 미착수 |
+| 5 → 6 | Go | 5·6·7단계 방법론(TDD, Twelve-Factor, 5 Whys+Blameless) 전부 문서화 완료 |
+| 6 → 7 | Go | 위와 동일 — 시스템 자체는 실사용으로 검증할 일만 남음 |
 
-## 실제 사용 예시 — Two Sum / Contains Duplicate
-
-위 템플릿을 실제로 두 세션 파일에 채워서 검증함:
-[Two Sum](../01-problem-save/sessions/algorithm-track/2026-09-17-two-sum.md),
-[Contains Duplicate](../01-problem-save/sessions/algorithm-track/2026-09-17-contains-duplicate.md).
-두 항목 모두 2단계는 Skip(경량 스코프), 3→4는 Go(카탈로그에서 기존 패턴을 찾아 재사용
-— [핵심 피드백 루프 실증](worklog.md#핵심-피드백-루프-실증) 참고), 4단계 이후는 아직
-비어 있음(실제 최적화 코드 구현 전) — 거짓으로 채우지 않고 정직하게 비워둔 예시.
+이 표는 이 워크플로우 시스템 자체(메타 프로젝트)를 만드는 과정의 기록이라
+지우지 않고 남겨뒀습니다. 실제로 이 시스템을 써서 무언가를 풀어본 기록은
+`sessions/README.md` 트래커에 새로 쌓입니다.
 
 ## 출처
 - [What Is the Difference Between DoD and DoR? - Scrum.org](https://www.scrum.org/resources/blog/what-difference-between-definition-done-dod-and-definition-ready-dor)

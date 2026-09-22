@@ -5,6 +5,11 @@
 마지막 단계(유지보수)의 회고가 다시 앞 단계의 참조 자료로 쌓입니다** — 이 피드백
 루프가 이 시스템의 핵심입니다.
 
+> 🌱 **이 브랜치(`template`)는 빈 상태로 시작하는 버전입니다.** 규칙·템플릿·
+> 스킬은 다 갖춰져 있지만, 특정 문제를 실제로 풀었던 기록은 없습니다 — 당신
+> 것으로 채워 나가면 됩니다. 처음 시작한다면 **[GETTING_STARTED.md](GETTING_STARTED.md)**부터
+> 읽으세요.
+
 ```mermaid
 flowchart LR
     S1[1 문제 저장] --> S2[2 문제 분석] --> S3[3 패턴 분석]
@@ -30,8 +35,9 @@ flowchart LR
 
 **지금까지 진행한 모든 문제/프로젝트를 한눈에 보려면 →
 [docs/01-problem-save/sessions/README.md](docs/01-problem-save/sessions/README.md)**
-(트래커 표: 문제별 트랙/등급/패턴/게이트 상태/테스트 개수). 전체 테스트를 한 번에
-돌리려면 `python3 implementations/run_all_tests.py`.
+(트래커 표: 문제별 트랙/등급/패턴/게이트 상태/테스트 개수 — 이 브랜치는 아직
+비어 있습니다). 전체 테스트를 한 번에 돌리려면
+`python3 implementations/run_all_tests.py`.
 
 ## 단계 안내
 

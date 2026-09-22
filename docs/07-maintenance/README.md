@@ -1,7 +1,7 @@
 # 7단계: 유지보수
 
-> 상태: 🟡 진행 중 — 8개 항목 회고 완료(1→7 완주, Lite 등급 1건 포함). 전체 목록·회고 링크는
-> [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
+> 상태: ✅ 방법론 정의 완료 — 실제 회고 사례는 아직 없습니다. 전체 목록·회고
+> 링크는 [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
 
 이 워크플로우의 핵심 피드백 루프가 일어나는 단계 (원문제: "배운 게 재사용 안 됨"을
 해결하는 지점).

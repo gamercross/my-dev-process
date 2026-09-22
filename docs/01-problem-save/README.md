@@ -25,10 +25,9 @@ flowchart LR
 | [learning-track.md](learning-track.md) | 새로운 개념/기술 학습 기록 | Feynman Technique |
 | [prd-template.md](prd-template.md) | Full 등급 프로젝트 트랙 전용 확장판 | Google/Atlassian PRD |
 
-`learning-track.md`는 이 시스템의 세 번째 트랙으로, ADR-0001의 Supportability
-제약("새 트랙 추가 시 스킬 로직 무변경")을 실제로 검증하려고 추가했습니다 —
-`.claude/skills/dev-workflow/SKILL.md`는 한 줄도 안 고쳤습니다(자세한 건
-[worklog.md](../00-overview/worklog.md) 참고).
+새 트랙이 필요하면 이 폴더에 템플릿 파일 하나만 추가하면 됩니다 — 스킬
+로직을 바꿀 필요가 없습니다([ADR-0001](../03-pattern-analysis/adr/0001-storage-and-interface.md)의
+Supportability 제약, `learning-track.md`가 실제로 이렇게 추가된 예시입니다).
 
 PRD를 언제 쓰는지는 [scope-tiers.md](../00-overview/scope-tiers.md) 등급으로 정합니다.
 

@@ -1,7 +1,7 @@
 # 6단계: 서비스
 
-> 상태: 🟡 진행 중 — 7개 항목 성능 실측/Planguage Goal 실증 완료(Lite 등급
-> 학습 트랙 1건은 6단계 자체가 생략 대상이라 해당 없음). 전체 목록은
+> 상태: ✅ 방법론 정의 완료 — 실제 성능 실측/Planguage Goal 사례는 아직
+> 없습니다. 전체 목록은
 > [sessions/README.md 트래커](../01-problem-save/sessions/README.md) 참고.
 
 완성된 구현을 실제로 사용 가능한 형태로 내보내는 단계. **2단계에서 정한 Planguage
@@ -36,20 +36,17 @@ flowchart LR
 ## 알고리즘 트랙 성능 실측
 
 각 구현 폴더의 `benchmark.py`로 제약조건 상한 근처에서 브루트포스 대비 최적화의
-실제 속도 차이를 측정했습니다.
+실제 속도 차이를 측정합니다.
 
-| 문제 | 브루트포스 O(n²) | 최적화 O(n) | 비고 |
+> **체크리스트**: 벤치마크의 "최악 케이스" 입력은 반드시 실행해서 확인하세요
+> — 논리적으로 최악처럼 보이는 입력이 우연히 더 빨리 끝나는 경우가 실제로
+> 있습니다(`docs/catalog/checklist.md`의 "6단계 성능 실측 체크리스트" 참고).
+> 작은 크기 여러 개에서 추세(예: n을 2배씩 늘렸을 때 시간이 몇 배씩 느는지)를
+> 먼저 확인한 뒤, 제약조건 상한에서 실제 값을 측정하는 순서를 권장합니다.
+
+| 문제 | 브루트포스 | 최적화 | 비고 |
 |---|---|---|---|
-| Two Sum (n=10,000, 정답이 배열 끝) | 1842.6 ms | 1.147 ms | 약 1600배 |
-| Contains Duplicate (n=100,000, 중복 없음) | (직접 측정 비현실적 — 추세로 추정 시 약 1~2분) | 5.94 ms | n=1000/2000/4000에서 9.2/37.5/151.5 ms로 4배씩 증가 확인(O(n²) 추세) |
-| Valid Parentheses (n=10,000, 완전 중첩) | 179.2 ms | 0.383 ms | 약 468배. n=1000~8000에서 4배씩 증가 확인 후 상한에서 측정 |
-| Contains Duplicate II (n=100,000, 중복 없음) | (직접 측정 비현실적 — 추세로 추정 시 1~2분) | 10.57 ms | n=500~4000에서 약 4배씩 증가 확인(O(n²) 추세) |
-| Best Time to Buy and Sell Stock (n=100,000, 무작위 고유값) | (직접 측정 비현실적 — 추세로 추정 시 2분 이상) | 5.846 ms | n=500~4000에서 약 4배씩 증가 확인(O(n²) 추세) |
-
-Contains Duplicate 계열은 브루트포스를 제약조건 상한(10^5)에서 직접 돌리면 비현실적이라,
-작은 n에서 증가 추세만 확인하고 최적화 버전만 실제 상한에서 측정했습니다.
-Valid Parentheses부터는 Two Sum의 교훈(주장한 "최악 케이스"가 실제로는 아니었던 것)을
-반영해, 상한 측정 전에 여러 크기에서 추세부터 확인하는 게 관행이 됐습니다.
+| _(아직 없음)_ | | | |
 
 ## Planguage Goal 실측
 
@@ -63,31 +60,7 @@ Valid Parentheses부터는 Two Sum의 교훈(주장한 "최악 케이스"가 실
 
 측정 결과가 Goal 미달이면, 그 사실 자체가 7단계 회고의 입력이 됩니다.
 
-## 프로젝트 트랙 실제 사례 — 카탈로그 검색 CLI
+## 프로젝트 트랙 실제 사례
 
-위의 Two Sum/Contains Duplicate는 알고리즘 트랙이라 Planguage Goal 자체가
-없었는데, [카탈로그 검색 CLI](../../implementations/project-track/catalog-search-cli/)가
-이 저장소에서 Planguage Goal 실측 규칙을 **실제로 적용한 첫 사례**입니다.
-
-| Goal | 목표 | 실측 |
-|---|---|---|
-| Usability: 검색 소요시간 | 0.5초 이내 | 34.0 ms |
-| Supportability: 외부 패키지 수 | 0개 | 0개(표준 라이브러리만) |
-
-Twelve-Factor App 중 실제로 적용된 것: Config(`CATALOG_ROOT` 환경변수),
-Backing Services(카탈로그 경로를 붙였다 뗄 수 있는 자원으로 취급), Processes
-(무상태), Logs(표준출력).
-
-## 프로젝트 트랙 실제 사례 — 진행상황 대시보드 생성기
-
-두 번째 프로젝트 트랙 사례. [진행상황 대시보드 생성기](../../implementations/project-track/progress-dashboard-generator/)로
-Planguage Goal 실측이 처음으로 **재현**됨을 확인했습니다.
-
-| Goal | 목표 | 실측 |
-|---|---|---|
-| Usability: 리포트 생성 시간(테스트 실행 포함) | 2초 이내(Stretch 0.5초) | 101.1 ms — Stretch까지 달성 |
-| Supportability: 외부 패키지 수 | 0개 | 0개(표준 라이브러리만) |
-| Supportability: 새 수집기 추가 시 기존 파일 수정 수 | 0개 | 아직 실측 안 됨(다음 수집기 추가 시 측정) |
-
-Twelve-Factor App 중 실제로 적용된 것: Config(`REPORT_OUTPUT` 환경변수),
-Processes(무상태), Logs(표준출력).
+_(아직 없음 — 첫 프로젝트를 6단계까지 진행하면 여기에 Twelve-Factor 적용
+내역과 Planguage Goal 실측 표가 쌓입니다.)_

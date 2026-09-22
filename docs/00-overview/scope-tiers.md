@@ -56,9 +56,6 @@ David Allen의 GTD(*Getting Things Done*)에는 **2분 규칙**이 있습니다:
 등급: Full / Xpress / Lite / 즉시처리
 ```
 
-Two Sum·Contains Duplicate는 지금 돌아보면 **Xpress급**이었습니다 — 두 세션 파일에
-소급 반영합니다.
-
 ## 출처
 - Cooper, R. G. — Stage-Gate Full/Xpress/Lite 등급 구분,
   [ResearchGate 그림 자료](https://www.researchgate.net/figure/Illustration-of-the-SGS-Stage-Gate-Xpress-and-Stage-Gate-Lite-adapted-from-Cooper_fig1_368399853)

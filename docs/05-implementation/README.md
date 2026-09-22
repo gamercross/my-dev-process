@@ -1,7 +1,7 @@
 # 5단계: 구현
 
-> 상태: 🟡 진행 중 — [Two Sum](../../implementations/algorithm-track/two-sum/),
-> [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/) 완료
+> 상태: ✅ 방법론 정의 완료 — 실제 적용 사례는 아직 없습니다(첫 항목을
+> 구현하면 여기에 실제 사례가 쌓입니다).
 
 패턴 스켈레톤을 실제 문제/요구사항에 맞게 완성하는 단계.
 
@@ -48,15 +48,5 @@ implementations/
 
 ## 실제 사례
 
-두 문제 모두 같은 순서(Red → Green → Refactor)로 진행했고, 2단계를 생략한 Xpress
-등급이라 경계값 분석 + 브루트포스 대비 차등 테스트로 엣지 케이스를 대신했습니다.
-
-| 문제 | 코드 | Refactor(최적화) | 테스트 |
-|---|---|---|---|
-| [Two Sum](../../implementations/algorithm-track/two-sum/) | O(n²) → O(n) | [해시맵 원패스 탐색](../catalog/patterns.md) | 5개 (길이 하한, 정답이 양끝, 음수, 차등 테스트 200회) |
-| [Contains Duplicate](../../implementations/algorithm-track/contains-duplicate/) | O(n²) → O(n) | 같은 패턴의 해시셋 변형 | 6개 (길이 하한 1, 중복이 양끝, 음수, 차등 테스트 200회) |
-
-**Contains Duplicate가 확인해준 것**: `catalog/patterns.md`의 패턴이 "Two Sum
-전용"이 아니라 정말로 재사용 가능한 일반 패턴이라는 것 — 완전히 다른 문제에 같은
-설명("배열을 한 번 순회하며 지금까지 본 값을 저장, O(1) 확인")을 그대로 적용해서
-풀렸습니다.
+_(아직 없음 — 첫 항목을 5단계까지 진행하면 여기에 표로 쌓입니다: 문제/코드/
+Refactor 방향/테스트 개수.)_
