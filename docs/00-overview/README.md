@@ -1,6 +1,6 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
-- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-19 (자세한 변경 이력은 [worklog.md](worklog.md))
+- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-22 (자세한 변경 이력은 [worklog.md](worklog.md))
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
@@ -69,9 +69,9 @@ docs/
   02-problem-analysis/  2단계: 요구사항 분석 방법론 + 적용 범위(경량화 규칙) + 적용 예시
   03-pattern-analysis/  3단계: 패턴/아키텍처 선택 (ADR-0001 완료) + adr/
   04-pattern-implementation/  4단계: 패턴 스켈레톤 구현 (SKILL.md 스켈레톤 완료) + 다이어그램 선택 가이드
-  05-implementation/    5단계: TDD + 동등분할·경계값 분석 (5개 항목 적용 완료)
-  06-service/           6단계: Twelve-Factor App + 성능 실측 (5개 항목 적용 완료)
-  07-maintenance/       7단계: 회고 — 5 Whys + Blameless Postmortem (5개 항목 적용 완료)
+  05-implementation/    5단계: TDD + 동등분할·경계값 분석 (6개 항목 적용 완료)
+  06-service/           6단계: Twelve-Factor App + 성능 실측 (6개 항목 적용 완료)
+  07-maintenance/       7단계: 회고 — 5 Whys + Blameless Postmortem (6개 항목 적용 완료)
   catalog/              패턴 카탈로그, 분석 체크리스트 (공용 참조 자료, 계속 누적)
 ```
 
@@ -84,13 +84,15 @@ docs/
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
 | 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
-| 5. 구현 | 🟡 진행 중 | 다섯 항목 전체 TDD 구현 완료(5개 구현 31개 테스트 통과, [`implementations/`](../../implementations/) 참고). [`docs/05-implementation/`](../05-implementation/README.md) |
-| 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 4건 성능 실측 + 카탈로그 검색 CLI Planguage Goal 실증. 벤치마크마다 추세로 최악 케이스 검증하는 습관 정착. [`docs/06-service/`](../06-service/README.md) |
-| 7. 유지보수 | 🟡 진행 중 | 다섯 항목 모두 회고 완료(1→7 완주) → `catalog/checklist.md` 4개 항목, `catalog/patterns.md`에 구현 기법 패턴 2개(해시맵 원패스 탐색 — 3회 재사용, 스택 기반 매칭). [`docs/07-maintenance/`](../07-maintenance/README.md) |
+| 5. 구현 | 🟡 진행 중 | 여섯 항목 전체 TDD 구현 완료(6개 구현 38개 테스트 통과, [`implementations/`](../../implementations/) 참고). [`docs/05-implementation/`](../05-implementation/README.md) |
+| 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 5건 성능 실측 + 카탈로그 검색 CLI Planguage Goal 실증. 벤치마크마다 추세로 최악 케이스 검증하는 습관 정착. [`docs/06-service/`](../06-service/README.md) |
+| 7. 유지보수 | 🟡 진행 중 | 여섯 항목 모두 회고 완료(1→7 완주) → `catalog/checklist.md` 5개 항목, `catalog/patterns.md`에 패턴 3개(해시맵 원패스 탐색 — 3회 재사용, 스택 기반 매칭, 한 번 순회 최솟값 추적). [`docs/07-maintenance/`](../07-maintenance/README.md) |
 
-**다음 액션**: Xpress 알고리즘 4건 + Full 프로젝트 1건, 총 5개 항목이 1→7을
+**다음 액션**: Xpress 알고리즘 5건 + Full 프로젝트 1건, 총 6개 항목이 1→7을
 완주함(전체 목록: [sessions/README.md](../01-problem-save/sessions/README.md)
-트래커). 다음은 두 번째 Full 등급 프로젝트로 반복 검증하거나, 새 트랙을
+트래커). SKILL.md의 수정된 절차(patterns.md 선확인, 트랙 자동 선택 예외)가
+Best Time to Buy and Sell Stock에서 실제로 마찰 없이 동작함을 확인. 다음은
+두 번째 Full 등급 프로젝트로 반복 검증하거나, 새 트랙을
 추가해서 확장성 규칙을 실증.
 
 ## 유즈케이스
