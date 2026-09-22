@@ -5,6 +5,11 @@
 마지막 단계(유지보수)의 회고가 다시 앞 단계의 참조 자료로 쌓입니다** — 이 피드백
 루프가 이 시스템의 핵심입니다.
 
+> 🌍 **이 저장소는 개인용(private, 실제 사용 이력 포함)입니다.** 다른 사람이
+> 가져다 쓸 수 있는 공개용 빈 버전은 →
+> **[gamercross/my-dev-process-template](https://github.com/gamercross/my-dev-process-template)**
+> (public, 이력 없는 깨끗한 시작점 — 사용법은 그 저장소의 `GETTING_STARTED.md` 참고)
+
 ```mermaid
 flowchart LR
     S1[1 문제 저장] --> S2[2 문제 분석] --> S3[3 패턴 분석]
