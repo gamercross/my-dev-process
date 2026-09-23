@@ -24,7 +24,7 @@ docs/01-problem-save/sessions/<트랙파일명(확장자 제외)>/<YYYY-MM-DD>-<
 
 | 문제/프로젝트 | 트랙 | 등급 | 사용한 패턴 | 게이트 | 테스트 | 세션 파일 |
 |---|---|---|---|---|---|---|
-| _(아직 없음 — 첫 항목을 저장하면 여기에 행이 생깁니다)_ | | | | | | |
+| 발표 준비 시스템 (검증용: 답변 카드 A) | project-track | Full | - | 1 (Recycle: PRD 작성 중) | - | [2026-09-24-answer-card-a.md](project-track/2026-09-24-answer-card-a.md) |
 
 전체 테스트를 한 번에 돌리려면: `python3 implementations/run_all_tests.py`
 
