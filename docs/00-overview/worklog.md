@@ -415,3 +415,28 @@ Lite/즉시처리는 생략 — 안 그러면 방금 실증한 즉시처리의 �
 고쳤다 — "받아 적기"에서 "되묻기"로. 아직 실전 항목으로 검증하지는
 않았다(다음 항목 저장 때가 검증 시점). `02-problem-analysis/01-elicitation.md`의
 Interview 기법 행도 이 구체적 절차를 가리키도록 연결했다.
+
+## 2026-09-28
+
+### `.claude/` 계층형 인프라 신설 — CLAUDE.md 라우터, rules, hooks, agents
+`.claude/`를 "라우터(CLAUDE.md, 200줄 이내) + 조건부 로드 규칙(`rules/*.md`) +
+기계적 강제(`hooks/*.sh`) + 격리 실행(`agents/verify.md`) + 절차 분리
+(`SKILL.md`/`PROCEDURE.md`)"의 5개 층으로 재구성했다. `team` 브랜치를 새로
+만들어 이 작업의 대상으로 삼고(팀 프로젝트 협업 전 구조를 먼저 검증하려는
+목적), `main`에 PR로 병합.
+
+### 정합성 규칙(`consistency.md`) 추가 — 기준 계층의 상호 참조 관리
+`.claude/` 자체가 서로 참조하는 기준 계층이 되면서, 하나를 고치면 참조하던
+다른 파일이 낡을 수 있다는 문제를 발견 — `docs-editing.md`의 "상태 문구
+훑기" 습관을 `.claude/` 구조 전용으로 명시적 참조 지도(`consistency.md`)로
+승격했다. 아직 훅으로 강제하진 않고, 반복적으로 놓치면 다음 단계로
+승격하기로 명시해뒀다.
+
+### 세 갈래(private main/team/template + 공개 템플릿) 동기화
+`.claude/` 인프라를 `team`(fast-forward), `template`(개인 인스턴스 기록은
+제외하고 인프라 파일만 선택 반영), 공개 저장소
+`gamercross/my-dev-process-template`(재-archive 후 두 번째 커밋)까지 전부
+전파했다. 이 과정에서 리클론 이후 로컬 git `user.email`이 실제 Gmail로
+되돌아가 있던 걸 발견해 커밋 전에 noreply로 재설정 — 세션이 스크래치
+워크스페이스를 재구성할 때마다 이 설정이 초기화될 수 있다는 걸 확인했다.
+4곳(`main`/`team`/`template`/공개 템플릿) 모두 링크 무결성 0건으로 확인.
