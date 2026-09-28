@@ -1,6 +1,6 @@
 # 개요 — 나만의 개발 워크플로우 시스템
 
-- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-22 (자세한 변경 이력은 [worklog.md](worklog.md))
+- 최초 작성: 2026-09-17 · 마지막 업데이트: 2026-09-28 (자세한 변경 이력은 [worklog.md](worklog.md))
 
 이 저장소는 "문제 저장 → 문제 분석 → 패턴 분석 → 패턴 구현 → 구현 → 서비스 → 유지보수"라는
 7단계 개인 개발 워크플로우를 설계·기록하는 곳입니다. 각 단계는 `docs/` 아래 자기 폴더를 가지며,
@@ -83,7 +83,7 @@ docs/
 | 1. 문제 저장 | ✅ 완료 | [`docs/01-problem-save/`](../01-problem-save/README.md) — 세 번째 트랙(`learning-track.md`) 추가로 ADR-0001의 Supportability 제약을 실측 검증. 2026-09-22, 필드 채우기를 일방적 받아쓰기에서 Gause & Weinberg 컨텍스트-프리 질문 기반 인터뷰 방식으로 전환(아래 "다음 액션" 참고) |
 | 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. 두 번째 Full 프로젝트에서 ADR-0003(Microkernel)으로 이 저장소 최초의 ATAM 실사용. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
-| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
+| 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. 2026-09-28, `.claude/`를 라우터(`CLAUDE.md`)+조건부 규칙(`rules/`)+기계적 강제(`hooks/`)+격리 실행(`agents/verify.md`)+절차 분리(`SKILL.md`/`PROCEDURE.md`) 5개 층으로 재구성하고, 기준 파일 간 상호 참조를 관리하는 `rules/consistency.md`를 추가(`main`/`team`/`template`/공개 템플릿 4곳 동기화, 자세한 내용은 [worklog.md](worklog.md)). [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | 🟡 진행 중 | 일곱 항목 전체 TDD 구현 완료(7개 구현 48개 테스트 통과, [`implementations/`](../../implementations/) 참고). [`docs/05-implementation/`](../05-implementation/README.md) |
 | 6. 서비스 | 🟡 진행 중 | 알고리즘 트랙 5건 성능 실측 + 프로젝트 트랙 2건 Planguage Goal 실증. 벤치마크마다 추세로 최악 케이스 검증하는 습관 정착. [`docs/06-service/`](../06-service/README.md) |
 | 7. 유지보수 | 🟡 진행 중 | 여덟 항목 모두 회고 완료(1→7 완주) → `catalog/checklist.md` 6개 항목, `catalog/patterns.md`에 패턴 3개(해시맵 원패스 탐색 — 3회 재사용, 스택 기반 매칭, 한 번 순회 최솟값 추적) + 프로젝트 트랙 패턴 첫 재사용(환경변수 Config). [`docs/07-maintenance/`](../07-maintenance/README.md) |
