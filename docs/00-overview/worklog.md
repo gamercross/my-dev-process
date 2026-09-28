@@ -453,3 +453,17 @@ FR4로 편입**했다 — `02-specification-ears.md`(EARS 이벤트/예외 문�
 (RTM, UC8 신설)까지 5개 문서 전부 갱신. "새 프로젝트로 시작할지, 기존 걸
 업데이트할지"를 사용자에게 직접 확인받고 후자로 진행 — 이 판단 자체가
 1단계 인터뷰(동기/배경 질문)로 확인된 것.
+
+### 명령 4 첫 실사용 — `update-config` 등록·판정
+`docs/catalog/external-tools.md`가 비어있는 표뿐이라 실제로 채워보기 전엔
+명령 4 절차가 실전에서 돌아가는지 검증 안 된 상태였다. 가장 가까운 실제
+사례를 골랐다 — 이 세션이 훅 3개(`block-dangerous-git.sh` 등)를 만들 때
+실제로 따랐던 Claude Code 번들 스킬 `update-config`.
+
+`.claude/rules/external-integration.md` 절차대로: (1) `.claude/settings.json`
+실제 파일을 열어 이 도구가 건드리는 경로가 딱 그 파일 하나뿐임을 확인,
+(2) 우리 `hooks/**`·`rules/**`와 충돌 없음(오히려 그 스킬의 dedup-check→
+pipe-test→`jq -e` 검증 절차를 그대로 따른 게 바로 우리 훅 3개였음) 확인,
+(3) 이 도구가 기준 파일을 스스로 고친 적 없음(수동으로 읽고 병합만 함)
+확인 → **채택**으로 판정하고 `external-tools.md`에 기록. 새 라우팅 표 행은
+필요 없었다 — `settings.json`은 이미 `consistency.md`의 hooks 행이 커버.
