@@ -81,7 +81,7 @@ docs/
 |---|---|---|
 | 0. 원문제 정의 | ✅ 완료 | 위 참조 |
 | 1. 문제 저장 | ✅ 완료 | [`docs/01-problem-save/`](../01-problem-save/README.md) — 세 번째 트랙(`learning-track.md`) 추가로 ADR-0001의 Supportability 제약을 실측 검증. 2026-09-22, 필드 채우기를 일방적 받아쓰기에서 Gause & Weinberg 컨텍스트-프리 질문 기반 인터뷰 방식으로 전환(아래 "다음 액션" 참고) |
-| 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
+| 2. 문제 분석 | ✅ 완료 | 수집(BABOK)→명세(EARS)→정량화(Planguage)→우선순위(MoSCoW×Kano)→추적(RTM) 5단계 파이프라인 적용. 2026-09-28, FR4(외부 스킬/MCP 통합 분석 — 명령 4)를 EARS·Planguage·MoSCoW×Kano·RTM 전부에 추가해 "우리 프로젝트가 기존 체계를 침범당하지 않으면서 확장 가능한가"를 정식 요구사항으로 편입. [`docs/02-problem-analysis/`](../02-problem-analysis/README.md) |
 | 3. 패턴 분석 | ✅ 완료 | ADR-0001로 "파일+Claude Code 스킬 하이브리드" 채택. 두 번째 Full 프로젝트에서 ADR-0003(Microkernel)으로 이 저장소 최초의 ATAM 실사용. [`docs/03-pattern-analysis/`](../03-pattern-analysis/README.md) |
 | 4. 패턴 구현 | ✅ 완료 (스켈레톤) | Walking Skeleton(Cockburn)/Make it work-right-fast 원칙 적용. `.claude/skills/dev-workflow/SKILL.md` 작성, 트랙 자동 인식 스모크 테스트 통과, `sessions/` 폴더 구조 확정. 세 번째 항목 [Valid Parentheses](../01-problem-save/sessions/algorithm-track/2026-09-19-valid-parentheses.md)로 "검색 실패→표준 카탈로그 폴백" 경로 첫 실증. 2026-09-28, `.claude/`를 라우터(`CLAUDE.md`)+조건부 규칙(`rules/`)+기계적 강제(`hooks/`)+격리 실행(`agents/verify.md`)+절차 분리(`SKILL.md`/`PROCEDURE.md`) 5개 층으로 재구성하고, 기준 파일 간 상호 참조를 관리하는 `rules/consistency.md`를 추가(`main`/`team`/`template`/공개 템플릿 4곳 동기화, 자세한 내용은 [worklog.md](worklog.md)). [`docs/04-pattern-implementation/`](../04-pattern-implementation/README.md) |
 | 5. 구현 | 🟡 진행 중 | 일곱 항목 전체 TDD 구현 완료(7개 구현 48개 테스트 통과, [`implementations/`](../../implementations/) 참고). [`docs/05-implementation/`](../05-implementation/README.md) |
@@ -124,6 +124,7 @@ flowchart LR
     UC5[[UC5: 구현 및 검증]]
     UC6[[UC6: 회고 작성]]
     UC7[[UC7: 회고를 카탈로그/체크리스트에 반영]]
+    UC8[[UC8: 외부 스킬/MCP 통합 분석]]
 
     A1 --> UC1
     A1 --> UC2
@@ -136,6 +137,7 @@ flowchart LR
     A2 --> UC3
     A2 --> UC5
     A2 --> UC6
+    A2 --> UC8
 
     UC6 --> UC7
     UC7 -. extends .-> UC4
@@ -152,6 +154,11 @@ flowchart LR
 **UC7: 회고를 카탈로그/체크리스트에 반영** — 사전조건: UC6 완료 → 새 패턴/놓친 체크리스트
 항목 식별 → `catalog/` 파일에 추가 → git 커밋으로 이력 남김. 관련: FR3, 원문제 핵심 루프
 ([`docs/07-maintenance/`](../07-maintenance/README.md))
+
+**UC8: 외부 스킬/MCP 통합 분석** — 사전조건 없음(7단계 루프 밖에서 언제든 트리거) →
+도구별로 건드리는 경로·중복/충돌 분석 → 채택/격리/제거 판정 →
+`docs/catalog/external-tools.md`에 기록. 관련: FR4
+([`.claude/rules/external-integration.md`](../../.claude/rules/external-integration.md))
 
 ## 왜 지금 이런 모양인지
 

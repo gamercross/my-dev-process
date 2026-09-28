@@ -35,6 +35,17 @@ FR3 (Event-driven): When 유지보수 단계가 완료되면,
 
 FR1-예외 (Unwanted behavior): If 필수 필드가 비어 있으면,
                      then the 시스템은 shall 다음 단계로 진행을 막는다.
+
+FR4 (Event-driven): When 사용자가 외부 스킬/플러그인/MCP를 도입하면,
+                     the 시스템은 shall 그 도구가 건드리는 경로와 우리
+                     rules/hooks/agents와의 중복·충돌을 분석해 채택/격리/
+                     제거로 판정한다.
+
+FR4-예외 (Unwanted behavior): If 외부 도구가 우리 기준 파일
+                     (`CLAUDE.md`/`.claude/rules/**`/`.claude/hooks/**`/
+                     `.claude/agents/**`)을 스스로 변경했으면,
+                     then the 시스템은 shall 그 변경을 곧바로 받아들이지
+                     않고 사람이 검토한 뒤에만 커밋한다.
 ```
 
 EARS로 다시 쓰니 원래는 암묵적이었던 "FR1의 예외 케이스"가 별도 요구사항으로 명시적으로

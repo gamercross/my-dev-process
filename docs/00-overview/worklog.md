@@ -440,3 +440,16 @@ Interview 기법 행도 이 구체적 절차를 가리키도록 연결했다.
 되돌아가 있던 걸 발견해 커밋 전에 noreply로 재설정 — 세션이 스크래치
 워크스페이스를 재구성할 때마다 이 설정이 초기화될 수 있다는 걸 확인했다.
 4곳(`main`/`team`/`template`/공개 템플릿) 모두 링크 무결성 0건으로 확인.
+
+### FR4 편입 — "외부 스킬/MCP 통합 분석"을 이 시스템 자신의 2단계 요구사항으로
+"스킬을 많이 다운받는 게 능사는 아니지 않냐"는 질문에서 출발해, 이 시스템을
+다른 스킬/MCP를 흡수하며 확장 가능한 메타 프레임워크로 일반화하는 방향(B)을
+확정. 이미 코드로 만든 `.claude/rules/external-integration.md` +
+`docs/catalog/external-tools.md` + 명령 4를, 새 세션으로 따로 저장하는 대신
+**이 시스템 자체의 기존 2단계 요구사항(`applied-example.md`의 FR1~FR3)에
+FR4로 편입**했다 — `02-specification-ears.md`(EARS 이벤트/예외 문형),
+`03-quantification-planguage.md`(Supportability: 기준 파일 무단 변경
+0건 Goal), `04-prioritization.md`(Should+Performance), `05-traceability.md`
+(RTM, UC8 신설)까지 5개 문서 전부 갱신. "새 프로젝트로 시작할지, 기존 걸
+업데이트할지"를 사용자에게 직접 확인받고 후자로 진행 — 이 판단 자체가
+1단계 인터뷰(동기/배경 질문)로 확인된 것.

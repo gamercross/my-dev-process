@@ -62,6 +62,18 @@ Stretch: 해당 없음 (0이 이미 최선)
 > 애초에 달성 불가능했다(항목을 저장할 때마다 트래커가 바뀌므로). 자세한
 > 경위는 [worklog.md](../00-overview/worklog.md)의 2026-09-22 항목 참고.
 
+### Supportability — "외부 스킬/MCP 통합 시 기준 파일 무단 변경 방지" (FR4)
+
+```
+Scale: 외부 스킬/MCP 통합 과정에서 사람 검토 없이 반영된 기준 파일
+  (`CLAUDE.md`/`.claude/rules/**`/`.claude/hooks/**`/`.claude/agents/**`)
+  변경 건수(개)
+Meter: 통합 시 git diff로 기준 파일이 바뀌었는지 확인하고,
+  docs/catalog/external-tools.md의 판정 기록(채택/격리/제거)과 대조
+Goal: 0건 (모든 기준 파일 변경은 검토 후 커밋)
+Stretch: 해당 없음 (0이 이미 최선)
+```
+
 ### Reliability — "저장 데이터 유실 방지"
 
 ```
