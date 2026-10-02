@@ -6,9 +6,9 @@
 루프가 이 시스템의 핵심입니다.
 
 > 🌍 **이 저장소는 개인용(private, 실제 사용 이력 포함)입니다.** 다른 사람이
-> 가져다 쓸 수 있는 공개용 빈 버전은 →
-> **[gamercross/my-dev-process-template](https://github.com/gamercross/my-dev-process-template)**
-> (public, 이력 없는 깨끗한 시작점 — 사용법은 그 저장소의 `GETTING_STARTED.md` 참고)
+> 가져다 쓸 수 있는 공개 저장소는 →
+> **[gamercross/coding-marathon](https://github.com/gamercross/coding-marathon)**
+> (public, 커밋 이력 없이 새로 시작한 저장소 — 사용법은 그 저장소의 `GETTING_STARTED.md` 참고)
 
 ```mermaid
 flowchart LR

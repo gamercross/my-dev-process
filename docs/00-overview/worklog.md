@@ -435,7 +435,7 @@ Interview 기법 행도 이 구체적 절차를 가리키도록 연결했다.
 ### 세 갈래(private main/team/template + 공개 템플릿) 동기화
 `.claude/` 인프라를 `team`(fast-forward), `template`(개인 인스턴스 기록은
 제외하고 인프라 파일만 선택 반영), 공개 저장소
-`gamercross/my-dev-process-template`(재-archive 후 두 번째 커밋)까지 전부
+`gamercross/my-dev-process-template`(재-archive 후 두 번째 커밋. 이후 `coding-marathon`으로 이름 변경)까지 전부
 전파했다. 이 과정에서 리클론 이후 로컬 git `user.email`이 실제 Gmail로
 되돌아가 있던 걸 발견해 커밋 전에 noreply로 재설정 — 세션이 스크래치
 워크스페이스를 재구성할 때마다 이 설정이 초기화될 수 있다는 걸 확인했다.
